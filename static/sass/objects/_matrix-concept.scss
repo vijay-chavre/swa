@@ -1,0 +1,279 @@
+//  --------------------------------------------------
+//  Progress Matrix Concept Tile Object
+
+//  - styles for displaying concept tiles
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-matrixConcept {
+      width: rem(160px);
+      margin: 0 rem(8px) rem(8px) 0;
+      background: $ui-3;
+      padding: rem(8px) rem(12px);
+      text-align: left;
+      position: relative;
+
+      .a-glyph {
+        fill: $copy-1;
+      }
+
+      &--high {
+        color: white;
+        background: $active-3;
+
+        .o-matrixConcept__score {
+          color: white;
+        }
+
+        .a-glyph {
+          fill: #ffffff;
+        }
+
+        .o-matrixConcept__requestWS {
+          .b-button {
+            border-color: rgba(255, 255, 255, 0.4);
+
+            &__label {
+              color: white;
+            }
+
+            .o-matrixConcept__requestWSIcon {
+              .a-glyph {
+                fill: white;
+              }
+            }
+          }
+
+          &:hover {
+            .b-button {
+              background: white;
+              border-color: none;
+
+              &__label {
+                color: $active-3;
+              }
+
+              .o-matrixConcept__requestWSIcon {
+                .a-glyph {
+                  fill: $active-3;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &--medium {
+        background: $tint-3b;
+
+        .o-matrixConcept__score {
+          color: $active-3;
+        }
+
+        .o-matrixConcept__requestWS {
+
+          .b-button {
+            border-color: rgba(20, 200, 31, 0.4);
+
+            &__label {
+              color: $active-3;
+            }
+          }
+
+          &Icon {
+            .a-glyph {
+              fill: $active-3;
+            }
+          }
+
+          &:hover {
+            .b-button {
+              background: white;
+              border-color: white;
+            }
+          }
+
+          &--activated {
+            color: $active-3;
+
+            .a-glyph {
+              fill: $active-3;
+            }
+          }
+        }
+      }
+
+      &--mediumLow {
+        background: $yellow;
+
+        .o-matrixConcept__score {
+          color: $active-1;
+        }
+
+        .o-matrixConcept__requestWS {
+
+          .b-button {
+            border-color: rgba(0, 180, 241, 0.4);
+
+            &__label {
+              color: $active-1;
+            }
+          }
+
+          &Icon {
+            .a-glyph {
+              fill: $active-1;
+            }
+          }
+
+          &:hover {
+            .b-button {
+              background: white;
+              border-color: white;
+            }
+          }
+
+          &--activated {
+            color: $active-1;
+
+            .a-glyph {
+              fill: $active-1;
+            }
+          }
+        }
+      }
+
+      &--low {
+        color: white;
+        background: $alert;
+
+        .o-matrixConcept__score {
+          color: white;
+        }
+
+        .a-glyph {
+          fill: #ffffff;
+        }
+
+        .o-matrixConcept__requestWS {
+          .b-button {
+            border-color: rgba(255, 255, 255, 0.4);
+
+            &__label {
+              color: white;
+            }
+
+            .o-matrixConcept__requestWSIcon {
+              .a-glyph {
+                fill: white;
+              }
+            }
+          }
+
+          &:hover {
+            .b-button {
+              background: white;
+              border-color: none;
+
+              &__label {
+                color: $alert;
+              }
+
+              .o-matrixConcept__requestWSIcon {
+                .a-glyph {
+                  fill: $alert;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &__reviewWSFlag {
+        display: none;
+        position: absolute;
+        left: 125px;
+        bottom: 12px;
+      }
+
+      &--hasReviewWorksheet {
+
+        .o-matrixConcept__reviewWSFlag {
+          display: block;
+        }
+      }
+
+      &__name {
+        margin: rem(8px) 0 rem(8px) 0;
+        padding: rem(1px) 0 rem(7px);
+        font-size: rem(14px);
+        line-height: rem(20px);
+        font-weight: $font-normal;
+        min-height: rem(96px);
+      }
+
+      &__requestWS {
+        padding-bottom: rem(4px);
+        margin-top: rem(-40px);
+
+        .b-button {
+          border-color: rgba(0, 180, 241, 0.4);
+          @include flexbox;
+          padding: 0 rem(20px);
+          min-height: rem(36px);
+
+          &__label {
+            color: $active-1;
+            font-size: rem(11px);
+            line-height: rem(14px);
+            text-align: left;
+          }
+        }
+
+        &Icon {
+          width: rem(10px);
+          height: rem(10px);
+          margin-right: rem(8px);
+
+          .a-glyph {
+            fill: $active-1;
+            display: block;
+          }
+        }
+
+        &:hover {
+          .b-button {
+            background: white;
+            border-color: white;
+          }
+        }
+
+        &--activated {
+          font-size: rem(11px);
+          line-height: rem(14px);
+          font-weight: $font-bold;
+          @include flexbox;
+          padding-bottom: rem(8px);
+          margin-top: rem(-22px);
+
+          .a-glyph {
+            width: rem(16px);
+            height: rem(14px);
+            margin-right: rem(8px);
+          }
+        }
+      }
+
+      .o-matrixConcept__requestWS + .o-matrixConcept__name {
+        min-height: rem(64px);
+      }
+
+      &__score {
+        font-size: rem(22px);
+        line-height: rem(24px);
+        text-transform: uppercase;
+        @extend %titles;
+        padding: rem(4px) 0;
+        color: $ui-1;
+      }
+    }

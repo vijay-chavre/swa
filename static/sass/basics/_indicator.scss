@@ -1,0 +1,72 @@
+//  --------------------------------------------------
+//  Indicators Basics
+
+//  - displays glyphs with text next to it
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-indicator {
+      position: relative;
+      display: block;
+      padding-left: rem(20px);
+      font-size: rem(12px);
+      line-height: rem(16px);
+      font-weight: $font-medium;
+
+      .a-glyph {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: rem(16px);
+        height: rem(16px);
+      }
+
+      &--size\(24\) {
+        font-size: rem(24px);
+        line-height: rem(24px);
+        .a-glyph {
+          width: rem(24px);
+          height: rem(24px);
+        }
+      }
+
+      &--alert {
+        color: $alert;
+
+        .a-glyph {
+          fill: $alert;
+        }
+      }
+
+      &--active-1b {
+        color: $active-1b;
+
+        .a-glyph {
+          fill: $active-1b;
+        }
+        .a-glyph__stroke {
+          stroke: $active-1b;
+        }
+      }
+
+      &--copy-1 {
+        color: $copy-1;
+
+        .a-glyph {
+          fill: $copy-1;
+        }
+        .a-glyph__stroke {
+          stroke: $copy-1;
+        }
+      }
+
+      &--copy-2 {
+        color: $copy-2;
+
+        .a-glyph {
+          fill: $copy-2;
+        }
+      }
+
+
+    }

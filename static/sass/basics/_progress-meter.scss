@@ -1,0 +1,92 @@
+//  --------------------------------------------------
+//  Progress Meter Basics
+
+//  - display progress bars
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-progressMeter {
+
+      &__status {
+        &:before {
+          content: '';
+        }
+      }
+
+      &__meter {
+        height: rem(3px);
+        margin: rem(3px) 0 rem(10px);
+        background: $ui-2;
+        position: relative;
+        overflow: hidden;
+      }
+      &__fillBar {
+        background: $active-1;
+        height: rem(3px);
+        width: 100%;
+        background: $active-3;
+      }
+
+      &--loading {
+        .b-progressMeter__status:before {
+          animation-duration: 7s;
+          animation-name: statusUpdates;
+          animation-timing-function: linear;
+        }
+        .b-progressMeter__fillBar {
+          animation-duration: 7s;
+          animation-name: simulateLoader;
+          animation-timing-function: $ease;
+        }
+      }
+
+      &__container {
+        animation-duration: 8s;
+        animation-name: displayModal;
+        animation-timing-function: $ease;
+        transform: translateY(-120vh);
+      }
+
+      @keyframes simulateLoader {
+        0% {
+          width: 0;
+          background: $active-1;
+        }
+
+        70% {
+          background: $active-1;
+        }
+
+        100% {
+          width: 100%;
+          background: $active-3;
+        }
+      }
+
+      @keyframes statusUpdates {
+        0% {
+          content: 'Tallying Score...';
+        }
+        30% {
+          content: 'Calculating Points...';
+        }
+        75% {
+          content: 'Submitting to Server...';
+        }
+      }
+
+      @keyframes displayModal {
+        0% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        90% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(-120vh);
+        }
+      }
+    }

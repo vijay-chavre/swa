@@ -1,0 +1,13 @@
+//  --------------------------------------------------
+//  Grade Marker Basics
+
+//  - displays grade number in a circle
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-gradeMarker {
+      width: rem(64px);
+      height: rem(64px);
+      margin: 0 auto rem(8px);
+      border-radius: 100%;
+    }

@@ -1,0 +1,79 @@
+//  --------------------------------------------------
+//  TabHeader Objects
+
+//  - headers with tabs
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-tabHeader {
+      background: white;
+      -webkit-box-shadow: 0 1px 0 0 $ui-2;
+      box-shadow: 0 1px 0 0 $ui-2;
+      margin: 0 0 rem(24px);
+      padding: rem(24px) rem(32px) 0;
+      width: 100%;
+      text-align: center;
+
+      &__tabs {
+        @include flexbox;
+        @include justify-content(center);
+      }
+
+      &__tab {
+        @include flexbox;
+        @include align-items(center);
+        padding: rem(10px) rem(8px) rem(20px);
+        margin-right: rem(16px);
+        color: $copy-2;
+        transition: color $timing $ease;
+        position: relative;
+
+        &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: rem(3px);
+          transition: opacity $timing $ease, background $timing $ease;
+          background-color: $ui-1;
+          opacity: 0;
+        }
+
+        &:hover {
+          color: $active-1;
+
+          &:after {
+            opacity: 1;
+          }
+        }
+
+        &--active {
+
+          &:after {
+            opacity: 1;
+            background: $active-1;
+          }
+          .o-tabHeader__label {
+            font-weight: $font-medium;
+            color: $copy-1;
+          }
+        }
+      }
+
+      &__label {
+        font-size: rem(14px);
+        line-height: rem(16px);
+        padding: rem(1px) 0;
+      }
+
+      &__counter {
+        background: $active-2;
+        color: white;
+        margin-left: rem(4px);
+        padding: rem(1px) rem(8px);
+        border-radius: rem(50px);
+        font-size: rem(14px);
+        line-height: rem(16px);
+      }
+    }

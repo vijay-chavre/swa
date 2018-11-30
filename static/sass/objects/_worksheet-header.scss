@@ -1,0 +1,147 @@
+//  --------------------------------------------------
+//  Worksheet Header Object
+
+//  - displays for worksheet header
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-worksheetHeader {
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+      padding: rem(8px) rem(16px);
+      height: rem(48px);
+      @include gradient-blue-horizontal;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: $z-chrome;
+
+      &__logo {
+        .o-thinkster__wordmark {
+          display: none;
+          fill: white;
+        }
+
+        .o-thinkster__logomark {
+          border-radius: 50%;
+          width: rem(24px);
+          height: rem(24px);
+          padding: rem(4px);
+          background: white;
+        }
+      }
+
+      &__breadcrumb {
+        font-size: rem(14px);
+        line-height: rem(24px);
+        margin-left: rem(4px);
+        color: white;
+
+        a {
+          color: white;
+        }
+
+        a:hover {
+          color: white;
+        }
+
+        &Worksheet {
+          display: none;
+        }
+      }
+
+      &__actions {
+        @include flex-grow(1);
+        @include flexbox;
+        @include justify-content(flex-end);
+      }
+
+        &__actionItem {
+          margin-right: rem(8px);
+        }
+
+        &__actionLink {
+          color: $copy-1;
+          font-size: rem(14px);
+          line-height: rem(24px);
+        }
+
+
+      &__profile {
+        @include flexbox;
+        @include align-items(center);
+
+        &Name {
+          display: none;
+        }
+      }
+    }
+
+//  --------------------------------------------------
+//  tablet styles
+//  ==================================================
+    @media #{ $tablet--start } {
+      .o-worksheetTitle {
+        left: rem(128px);
+        right: rem(128px);
+      }
+
+      .o-worksheetHeader {
+        &__breadcrumb {
+
+          &Worksheet {
+            display: inline;
+          }
+        }
+      }
+    }
+
+//  --------------------------------------------------
+//  desktop styles
+//  ==================================================
+
+    @media #{ $desktop--start } {
+
+      .o-worksheetHeader {
+        padding: rem(8px) rem(16px);
+
+        &__logo {
+
+          .o-thinkster__wordmark {
+            display: block;
+            fill: white;
+          }
+        }
+
+        &__breadcrumb {
+          margin-left: rem(12px);
+        }
+
+        &__profileName {
+          display: block;
+          font-size: rem(14px);
+          line-height: rem(24px);
+          margin: 0 rem(12px) 0 0;
+          color: white;
+        }
+      }
+
+      .o-worksheetTitle {
+        left: rem(296px);
+        right: rem(296px);
+      }
+    }
+
+    @media #{ $desktop-medium-1--start } {
+      .o-worksheetHeader {
+
+        &__logo {
+          .o-thinkster__wordmark {
+            width: rem(158px);
+            height: rem(16px);
+          }
+        }
+      }
+    }

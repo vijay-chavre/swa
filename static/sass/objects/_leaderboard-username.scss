@@ -1,0 +1,61 @@
+//  --------------------------------------------------
+//  Leaderboard Profile Object
+
+//  - styles for choosing a leaderboard username
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-leaderboard {
+      background: white;
+      border: rem(1px) solid $ui-2;
+      padding: rem(31px);
+      text-align: center;
+      transition: border $timing $ease;
+      margin: rem(24px) 0 0;
+
+      &__title {
+        padding: 0 0 rem(17px);
+        color: $active-2;
+      }
+
+      &__upload {
+        width: rem(200px);
+        height: rem(200px);
+        border-radius: rem(8px);
+        border: rem(1px) dashed $ui-1;
+        margin: 0 auto rem(24px);
+        padding: rem(32px) rem(8px);
+        color: $copy-2;
+        cursor: pointer;
+
+        .a-glyph {
+          width: rem(80px);
+          padding: rem(16px);
+        }
+      }
+
+      &__portrait {
+        width: rem(120px);
+        height: rem(120px);
+        margin: 0 auto rem(24px);
+
+        .UserAvatar--img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+
+      &__action {
+        @include flexbox;
+        @include justify-content(space-evenly);
+        margin: rem(24px) 0 0;
+
+        .b-flatBtn--white {
+          border: rem(1px) solid $active-1;
+          .b-button__label {
+            color: $active-1;
+          }
+        }
+      }
+    }

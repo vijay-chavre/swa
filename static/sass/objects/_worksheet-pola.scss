@@ -1,0 +1,110 @@
+//  --------------------------------------------------
+//  Worksheet POLA Object
+
+//  - styles for showing POLA for a graded worksheet
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-worksheetPOLAContainer {
+      position: fixed;
+      bottom: rem(50px);
+      left: 0;
+      width: 100%;
+    }
+
+    .o-worksheetPOLA {
+      background: $ui-3;
+      min-height: rem(72px);
+      @include flexbox;
+      position: relative;
+
+      &__playBtn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 15;
+        width: rem(47px);
+        height: rem(47px);
+        border-radius: 50%;
+        -webkit-box-shadow: 0 0 8px 0 rgba(0,0,0,0.16);
+        box-shadow: 0 0 8px 0 rgba(0,0,0,0.16);
+
+        .a-glyph {
+          display: block;
+        }
+
+        &--hidden {
+          display: none;
+        }
+      }
+
+      &__keys {
+        padding: rem(4px) rem(16px) rem(4px) rem(22px);
+        margin: rem(1px) 0 rem(-1px);
+        font-weight: $font-semibold;
+        text-align: right;
+      }
+    }
+
+    .o-worksheetPolaGraph {
+      position: relative;
+      width: 100%;
+
+      &:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        width: rem(2px);
+        height: rem(72px);
+        background: $active-1;
+      }
+
+      &__progress {
+        height: 100%;
+        border-right: rem(2px) solid $active-1;
+        background: #D6ECF3;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        transition: width $timing $ease;
+      }
+
+      &__bars {
+        @include flexbox;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        position: absolute;
+        top: 0;
+        left: rem(2px);
+      }
+
+      &__bar {
+        height: rem(16px);
+
+        &--selection {
+          background: $active-5;
+          margin: rem(4px) 0 rem(52px) 0;
+        }
+
+        &--erase {
+          background: $copy-2;
+          margin: rem(20px) 0 rem(36px) 0;
+        }
+
+        &--scribble {
+          background: $active-1b;
+          margin: rem(36px) 0 rem(20px) 0;
+        }
+
+        &--thinking {
+          background: $active-3;
+          margin: rem(52px) 0 rem(4px) 0;
+        }
+      }
+    }

@@ -1,0 +1,121 @@
+//  --------------------------------------------------
+//  Check Referral Objects
+
+//  - display referrals the user made
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-referralList {
+      width: 100%;
+      margin: rem(32px) 0 0;
+
+      &__body {
+        width: 100%;
+        @include flexbox;
+        @include flex-direction(column);
+      }
+
+      &__header {
+        border-bottom: rem(1px) solid $ui-1;
+        padding-bottom: rem(8px);
+        font-size: rem(18px);
+        line-height: rem(24px);
+        @include flexbox;
+
+        &Item {
+
+          &Friend {
+            @include flex-basis(25%);
+            text-align: left;
+          }
+
+          &Email {
+            @include flex-basis(45%);
+            text-align: left;
+          }
+
+           &ReferredOn, &Status {
+            @include flex-basis(15%);
+            text-align: left;
+           }
+        }
+
+      }
+
+      &__body {
+
+        &Item {
+          border-bottom: rem(1px) solid $ui-1;
+          padding: rem(8px) 0;
+          font-size: rem(14px);
+          @include flexbox;
+
+          &Friend {
+            @include flex-basis(25%);
+
+          }
+
+          &Email {
+            @include flex-basis(45%);
+            text-align: left;
+          }
+
+          &ReferredOn, &Status {
+            @include flex-basis(15%);
+            text-align: left;
+          }
+        }
+      }
+    }
+
+//  --------------------------------------------------
+//  mobile only styles (default)
+//  ==================================================
+    @media #{ $mobile-portrait--only } {
+      .o-referralList__header {
+        font-size: rem(12px);
+
+        &ItemReferredOn, &ItemStatus {
+          @include flex-basis(15%);
+        }
+      }
+
+      .o-referralList__bodyItem {
+        font-size: rem(10px);
+
+        &ReferredOn, &Status {
+          @include flex-basis(15%);
+        }
+      }
+
+    }
+
+//  --------------------------------------------------
+//  mobile only styles (default)
+//  ==================================================
+    @media #{ $mobile-landscape--only } {
+      .o-referralList__header {
+        font-size: rem(13px);
+
+        &ItemReferredOn, &ItemStatus {
+          @include flex-basis(20%);
+        }
+      }
+
+      .o-referralList__bodyItem {
+        font-size: rem(11px);
+
+        &ReferredOn, &Status {
+          @include flex-basis(20%);
+        }
+      }
+
+    }
+
+
+//  --------------------------------------------------
+//  desktop styles (default)
+//  ==================================================
+    @media #{ $desktop--start } {
+
+    }

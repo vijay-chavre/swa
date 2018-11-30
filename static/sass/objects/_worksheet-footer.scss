@@ -1,0 +1,16 @@
+//  --------------------------------------------------
+//  Worksheet Footer Object
+
+//  - displays for worksheet footer
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-worksheetPageFooter {
+      position: fixed;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      z-index: $z-chrome;
+      @include gradient-blue-horizontal;
+      @include flexbox;
+    }

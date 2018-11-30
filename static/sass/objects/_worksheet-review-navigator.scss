@@ -1,0 +1,345 @@
+//  --------------------------------------------------
+//  Review Navigator Object
+
+//  - styles for displaying question tiles
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-reviewNavigator {
+      @include flexbox;
+      @include flex-grow(1);
+      padding: rem(16px) 0;
+      margin: rem(4px) 0;
+
+      &__selector {
+        @include align-self(center);
+
+        .b-toggleSelector {
+
+          &__btn {
+            margin: 0 rem(16px);
+          }
+
+          &__optionName {
+            span {
+              display: inline;
+            }
+          }
+        }
+      }
+
+      &__navBtn {
+        width: rem(40px);
+        height: rem(56px);
+        position: absolute;
+        top: 0;
+        // background: white;
+        transition: background $timing $ease;
+
+        &--prev {
+          left: 0;
+        }
+        &--next {
+          right: 0;
+        }
+
+        .a-glyph {
+          fill: $active-1;
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        &:hover {
+          background: $active-1;
+
+          .a-glyph {
+            fill: white;
+          }
+        }
+      }
+
+      &__questions {
+        position: absolute;
+        top: 50%;
+        height: rem(56px);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        // position: relative;
+        padding: 0 rem(40px);
+        box-sizing: content-box;
+        width: rem(96px); //88 * itemsPerPage + 8
+        // margin: rem(-2px) 0;
+
+        &Pane {
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          position: relative;
+        }
+
+        &Slider {
+          position: absolute;
+          @include flexbox;
+          transition: left 0.6s $easeInOutCubic;
+
+          &.-p0 {
+            left: 0;
+          }
+          &.-p1 {
+            left: calc(-100% + 8px);
+          }
+          &.-p2 {
+            left: calc(-200% + 16px);
+          }
+          &.-p3 {
+            left: calc(-300% + 24px);
+          }
+          &.-p4 {
+            left: calc(-400% + 32px);
+          }
+          &.-p5 {
+            left: calc(-500% + 40px);
+          }
+          &.-p6 {
+            left: calc(-600% + 48px);
+          }
+          &.-p7 {
+            left: calc(-700% + 56px);
+          }
+          &.-p8 {
+            left: calc(-800% + 64px);
+          }
+          &.-p9 {
+            left: calc(-900% + 72px);
+          }
+          &.-p10 {
+            left: calc(-1000% + 80px);
+          }
+          &.-p11 {
+            left: calc(-1100% + 88px);
+          }
+          &.-p12 {
+            left: calc(-1200% + 96px);
+          }
+          &.-p13 {
+            left: calc(-1300% + 104px);
+          }
+          &.-p14 {
+            left: calc(-1400% + 112px);
+          }
+          &.-p15 {
+            left: calc(-1500% + 120px);
+          }
+          &.-p16 {
+            left: calc(-1600% + 128px);
+          }
+          &.-p17 {
+            left: calc(-1700% + 136px);
+          }
+          &.-p18 {
+            left: calc(-1800% + 144px);
+          }
+          &.-p19 {
+            left: calc(-1900% + 152px);
+          }
+          &.-p20 {
+            left: calc(-2000% + 160px);
+          }
+        }
+      }
+    }
+
+
+    // Review Tiles
+    .o-reviewTile {
+      width: rem(72px);
+      height: rem(56px);
+      background: white;
+      margin: 0 rem(8px) 0 0;
+      padding: rem(7px) rem(7px) rem(7px) rem(31px);
+      position: relative;
+      border: rem(1px) solid $ui-2;
+      position: relative;
+      cursor: pointer;
+      transition: border-color $timing $ease, background $timing $ease, color $timing $ease;
+
+      &:first-child {
+        margin-left: rem(8px);
+      }
+
+      &__id {
+        font-size: rem(12px);
+        line-height: rem(16px);
+        font-weight: $font-medium;
+        width: rem(24px);
+        color: white;
+        position: absolute;
+        top: rem(-1px);
+        left: rem(-1px);
+        bottom: rem(-1px);
+        padding-top: rem(7px);
+        text-align: center;
+      }
+
+      &__teacherIndicators {
+        @include flexbox;
+        margin-bottom: rem(8px);
+        position: relative;
+
+        .a-glyph {
+          fill: $active-1b;
+          width: rem(16px);
+          height: rem(16px);
+          display: block;
+        }
+
+        .a-glyph__stroke {
+          stroke: $active-1b;
+        }
+
+        .a-glyph--audio {
+          height: rem(13px);
+          margin-left: rem(8px);
+        }
+      }
+
+      &__studentIndicators {
+        @include flexbox;
+
+        .a-glyph {
+          width: rem(16px);
+          height: rem(16px);
+          fill: $copy-1;
+          display: block;
+        }
+
+        .a-glyph--flag {
+          fill: $alert;
+          margin-left: rem(8px);
+        }
+
+        .a-glyph__stroke {
+          stroke: $copy-1;
+        }
+      }
+
+      &:hover {
+        border-color: $active-1;
+      }
+
+      &--correct {
+        border-color: rgba(20, 200, 31, 0.16);
+        background: rgba(20, 200, 31, 0.04);
+
+        .o-reviewTile__id {
+          color: $active-3;
+        }
+
+        &.o-reviewTile--active {
+          border-color: $active-3;
+        }
+      }
+
+      &--incorrect {
+        border-color: rgba(220, 0, 0, 0.16);
+        background: rgba(220, 0, 0, 0.04);
+
+        .o-reviewTile__id {
+          color: $alert;
+        }
+
+        &.o-reviewTile--active {
+          border-color: $alert;
+        }
+      }
+
+      &--secondTry {
+        border-color: rgba(253, 127, 32, 0.16);
+        background: rgba(253, 127, 32, 0.04);
+
+        .o-reviewTile__id {
+          color: $active-2;
+        }
+
+        &.o-reviewTile--active {
+          border-color: $active-2;
+        }
+      }
+
+      &--skipped {
+        border-color: rgba(222, 222, 22, 0.16);
+        background: rgba(222, 222, 222, 0.04);
+
+        .o-reviewTile__id {
+          color: $ui-1;
+        }
+
+        &.o-reviewTile--active {
+          border-color: $ui-1;
+        }
+      }
+
+      &--active {
+        border: rem(1px) solid;
+      }
+    }
+
+//  --------------------------------------------------
+//  mobile portrait only styles
+//  ==================================================
+    @media #{ $mobile-portrait--only } {
+      .o-reviewNavigator {
+        .b-toggleSelector__optionName {
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+
+
+
+//  --------------------------------------------------
+//  tablet styles
+//  ==================================================
+    @media #{ $tablet--start } {
+      .o-reviewNavigator {
+        &__questions {
+          width: rem(272px); //88 * itemsPerPage + 8
+        }
+      }
+    }
+    @media #{ $tablet-medium-1--start } {
+      .o-reviewNavigator {
+        &__questions {
+          width: rem(360px); //88 * itemsPerPage + 8
+        }
+      }
+    }
+
+
+//  --------------------------------------------------
+//  desktop styles
+//  ==================================================
+    @media #{ $desktop--start } {
+      .o-reviewNavigator {
+        &__questions {
+          width: rem(408px); //88 * itemsPerPage + 8
+        }
+      }
+    }
+    @media #{ $desktop-small-3--start } {
+      .o-reviewNavigator {
+        &__questions {
+          width: rem(568px); //88 * itemsPerPage + 8
+        }
+      }
+    }
+    @media #{ $desktop-medium-2--start } {
+      .o-reviewNavigator {
+        &__questions {
+          width: rem(808px); //88 * itemsPerPage + 8
+        }
+      }
+    }

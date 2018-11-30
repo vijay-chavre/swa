@@ -1,0 +1,134 @@
+//  --------------------------------------------------
+//  Worksheet Summary Object
+
+//  - worksheet summary screen
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-worksheetSummary {
+      @include flexbox;
+      @include flex-wrap(wrap);
+
+      &__header {
+        @include gradient-green-horizontal;
+        margin: 0 0 rem(24px);
+        text-align: center;
+        padding: rem(32px) 0 rem(24px) 0;
+        position: relative;
+
+        &--mathPattern {
+
+          &:after {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: url('../images/math-bg.png') 0 0;
+            opacity: 0.2;
+          }
+        }
+
+        .o-perfReport__summaryValue,
+        .o-perfReport__summaryLabel {
+          color: white;
+        }
+
+        .o-perfReport__summaryScore {
+
+          &:after {
+            opacity: 0.4;
+          }
+        }
+      }
+
+      &__id {
+        text-transform: uppercase;
+        font-family: $copy-font;
+        display: block;
+        font-weight: $font-bold;
+        padding: rem(5px) 0 rem(3px);
+      }
+
+      &__title {
+        font-weight: $font-extrabold;
+        display: block;
+      }
+
+      &__dateCompleted {
+        display: block;
+        margin-bottom: rem(8px);
+      }
+
+      &__questions {
+        counter-reset: number;
+
+        &Label {
+          color: $copy-2;
+          text-align: center;
+          padding: rem(24px) 0 rem(24px);
+        }
+      }
+    }
+
+
+
+
+    .o-worksheetFeedback {
+      @include flexbox;
+      @include align-items(flex-start);
+
+      &__stars {
+        @include flexbox;
+        margin: rem(8px) 0;
+
+        .a-glyph {
+          display: block;
+          width: rem(24px);
+          height: rem(24px);
+          fill: $yellow;
+          margin: 0 rem(2px);
+        }
+      }
+
+      &__message {
+        color: $copy-1;
+        margin: rem(8px) 0  rem(8px) rem(14px);
+        font-size: rem(14px);
+        line-height: rem(24px);
+      }
+
+      &--pending {
+        display: block;
+
+        .o-worksheetFeedback__stars {
+          @include justify-content(center);
+        }
+
+        .o-worksheetFeedback__message {
+          @extend .a-p\(14\);
+          text-align: center;
+          color: $copy-2;
+          font-weight: $font-normal;
+          margin: 0;
+        }
+      }
+    }
+
+
+
+    .o-verboseFeedback {
+      margin: rem(8px) 0 0 0;
+
+      .b-comment__date {
+        text-align: center;
+        font-size: rem(14px);
+        line-height: rem(24px);
+        width: rem(64px);
+      }
+      .b-comment__bubble {
+        font-size: rem(16px);
+        line-height: rem(24px);
+      }
+    }

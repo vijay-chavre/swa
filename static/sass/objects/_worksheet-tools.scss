@@ -1,0 +1,74 @@
+//  --------------------------------------------------
+//  Worksheet Tools Object
+
+//  - tools for doing worksheets
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-worksheetTools {
+      text-align: center;
+      @include flexbox;
+      @include flex-grow(1);
+
+      .b-toolTips--top:after {
+        margin-bottom: rem(16px);
+      }
+
+      &__btn {
+
+        .a-glyph {
+          fill: white;
+        }
+
+        .a-glyph__stroke {
+          stroke: white;
+        }
+
+        &:hover {
+          background: $active-1;
+        }
+      }
+
+      &__actionBtn {
+        margin: rem(4px) 0;
+        background: $active-1;
+        border: 0;
+
+        .a-glyph {
+          fill: white;
+        }
+
+        &:hover {
+          background: $active-1b;
+        }
+      }
+
+      &__audio {
+        position: fixed;
+        top: rem(136px);
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2000;
+        min-width: rem(240px);
+        text-transform: uppercase;
+        padding-left: rem(48px);
+
+        .b-button__label {
+          display: block;
+          width: 100%;
+          font-size: rem(14px);
+          line-height: rem(16px);
+        }
+
+        .a-glyph {
+         position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+           left: rem(16px);
+          fill: white;
+           width: rem(24px);
+           height: rem(20px);
+        }
+      }
+
+    }

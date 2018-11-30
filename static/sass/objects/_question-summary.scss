@@ -1,0 +1,158 @@
+//  --------------------------------------------------
+//  Question Summary Object
+
+//  - styles for displaying question summaries in worksheet summary screen
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+
+    .o-questionSummary {
+      padding: 0 0 rem(31px) 0;
+      border-bottom: rem(1px) solid $ui-2;
+      margin: 0 0 rem(40px);
+
+      &__question {
+
+      }
+
+      &__answerKey {
+        @include flexbox;
+        @include justify-content(center);
+        margin: rem(16px) 0;
+      }
+
+        &__answer {
+          margin: 0 rem(8px);
+          text-align: center;
+          min-width: rem(136px);
+
+          &Value {
+            font-size: rem(28px);
+            line-height: rem(32px);
+            font-weight: $font-light;
+            padding: rem(6px) 0 rem(2px);
+          }
+
+          &Label {
+            font-size: rem(14px);
+            line-height: rem(16px);
+            color: $copy-2;
+            padding: rem(3px) 0 rem(5px);
+          }
+
+          &--correct {
+            .o-questionSummary__answerValue {
+              color: $active-3;
+            }
+          }
+          &--incorrect {
+            .o-questionSummary__answerValue {
+              color: $alert;
+            }
+          }
+          &--secondTry {
+            .o-questionSummary__answerValue {
+              color: $active-4;
+            }
+          }
+          &--skipped {
+            .o-questionSummary__answerValue {
+              color: $active-2;
+            }
+          }
+        }
+
+
+
+      &__infoBar {
+        @include flexbox;
+        @include flex-wrap(wrap);
+        @include justify-content(center);
+      }
+
+        &__infoItem {
+          position: relative;
+          padding: 0 0 0 rem(20px);
+          margin: 0 rem(24px) rem(8px) 0;
+          font-size: rem(12px);
+          line-height: rem(16px);
+          font-weight: $font-medium;
+          color: $copy-2;
+
+          .a-glyph {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: rem(16px);
+            height: rem(16px);
+            fill: $copy-2;
+          }
+
+          .a-glyph__stroke {
+            fill: none;
+            stroke: $copy-2;
+            stroke-width: 2;
+            stroke-linecap: 'round';
+            stroke-linejoin: 'round';
+          }
+
+          &--secondTry {
+            color: $active-4;
+            padding: 0;
+          }
+          &--scribbles {
+            color: $copy-1;
+            .a-glyph {
+              fill: $copy-1;
+            }
+            .a-glyph__stroke {
+              stroke: $copy-1;
+            }
+          }
+          &--flag {
+            color: $alert;
+            .a-glyph {
+              fill: $alert;
+            }
+          }
+          &--coach {
+            color: $active-1b;
+            .a-glyph {
+              fill: $active-1b;
+            }
+            .a-glyph__stroke {
+              stroke: $active-1b;
+            }
+          }
+        }
+    }
+
+
+
+//  --------------------------------------------------
+//  desktop styles screen size is 960px+
+//  ==================================================
+    @media #{ $desktop--start } {
+      .o-questionSummary {
+        @include flexbox;
+        position: relative;
+        //padding: 0 0 rem(31px) 0;
+
+        &__question {
+          @include flex-grow(1);
+          padding: rem(8px) 0;
+        }
+
+        &__answerKey {
+          margin: 0;
+        }
+
+        &__infoBar {
+          @include justify-content(flex-start);
+          position: absolute;
+          bottom: rem(24px);
+          right: rem(304px);
+          left: 0;
+        }
+      }
+    }

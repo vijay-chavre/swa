@@ -1,0 +1,94 @@
+//  --------------------------------------------------
+//  Container Abstracts
+
+//  - various styles for layouts and grids
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .a-mainView {
+      height: 100%;
+    }
+    .a-appView {
+      height: 100%;
+      padding: $appHeaderHeight 0 rem(64px) 0;
+
+      &__contents {
+        min-height: 900px;
+        position: relative;
+      }
+
+      &--altBG {
+        background: $ui-3;
+      }
+
+      &--hasWorksheetTools {
+        margin-left: $toolBarWidth;
+        margin-right: $toolBarWidth;
+      }
+
+      &--worksheet {
+        padding: rem(128px) rem(32px);
+      }
+
+      &--reviewWorksheet {
+        padding: $appHeaderHeight+rem(72px) rem(32px);
+      }
+    }
+
+    .a-container {
+      max-width: rem(1176px);
+      margin: 0 auto;
+      padding: 0 rem(24px);
+
+      &__intro {
+        padding: rem(64px) 0 rem(40px) 0;
+        text-align: center;
+      }
+
+      &--full {
+        max-width: none;
+      }
+    }
+
+    .app__contents {
+      position: relative;
+    }
+
+    .a-iframeView {
+      height: 100%;
+      min-height: 100vh;
+      background: white;
+      margin-top: $appHeaderHeight;
+      position: relative;
+    }
+
+    .a-limiter {
+      margin-left: auto;
+      margin-right: auto;
+
+      &\(800\) {
+        max-width: rem(800px);
+      }
+
+      &\(696\) {
+        max-width: rem(696px);
+      }
+
+      &\(312\) {
+        max-width: rem(312px);
+      }
+    }
+
+//  --------------------------------------------------
+//  tablet styles
+//  ==================================================
+
+    @media #{ $tablet--start } {
+
+      .a-appView {
+
+        &--hasSidebar {
+          margin-left: $sideBarWidth;
+        }
+      }
+    }

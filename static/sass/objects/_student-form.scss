@@ -1,0 +1,26 @@
+//  --------------------------------------------------
+//  Add Student Form Object
+
+//  - UI for add student form
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-studentForm {
+      background: white;
+      padding: rem(40px) rem(24px);
+
+      &__field {
+        margin-bottom: rem(16px);
+      }
+
+      &__action {
+        @include flexbox;
+        @include justify-content(center);
+        margin-top: rem(32px);
+
+        .b-button__label {
+          font-size: rem(16px);
+          line-height: rem(24px);
+        }
+      }
+    }

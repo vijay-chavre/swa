@@ -1,0 +1,127 @@
+//  --------------------------------------------------
+//  List Basics
+
+//  - styles for displaying various lists
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-bulletList {
+
+      &__item {
+        position: relative;
+        padding: 0 0 0 rem(16px);
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: rem(15px); //default assumes 14px font
+          left: 0;
+          width: rem(8px);
+          height: rem(8px);
+          display: block;
+          border-radius: 50%;
+          background: $active-2;
+        }
+      }
+    }
+
+  //  --------------------------------------------------
+  //  Numbered List Basics
+
+  //  - numbered lists using colored circles
+
+  //  --------------------------------------------------
+  //  mobile styles (default)
+  //  ==================================================
+      .b-numList {
+        counter-reset: numlist;
+
+        &__item {
+          padding: 0 0 rem(32px) rem(72px);
+          position: relative;
+
+          &:before {
+            width: rem(48px);
+            height: rem(48px);
+            border-radius: 50%;
+            display: block;
+            background: $active-1;
+            counter-increment: numlist;
+            content: counter(numlist);
+            @extend .a-s\(22\);
+            padding: 0;
+            line-height: rem(48px);
+            text-align: center;
+            color: white;
+            position: absolute;
+            left: 0;
+            top: 0;
+          }
+
+          &Name {
+            margin:0 0 rem(8px);
+          }
+        }
+
+        &--multiColor {
+
+          .b-numList__item:nth-child(4n + 1):before {
+            background: $active-1;
+          }
+          .b-numList__item:nth-child(4n + 2):before {
+            background: $active-4;
+          }
+          .b-numList__item:nth-child(4n + 3):before {
+            background: $active-2;
+          }
+          .b-numList__item:nth-child(4n + 4):before {
+            background: $active-3;
+          }
+        }
+      }
+
+
+
+
+  .b-videoPlaylist {
+
+    &__item {
+      margin: rem(32px) 0;
+    }
+    &__video {
+      max-width: rem(256px);
+      width: 100%;
+      background: $ui-1 center center no-repeat / cover;
+      margin: 0 auto;
+
+      &:before {
+        content: '';
+        width: 100%;
+        height: 0;
+        padding: 0 0 56.25%;
+        display: block;
+      }
+    }
+    &__desc {
+      padding: rem(8px) 0 0 0;
+      text-align: center;
+    }
+  }
+
+  //  --------------------------------------------------
+  //  tablet styles
+  //  ==================================================
+      @media #{ $tablet--start } {
+        .b-videoPlaylist {
+
+          &__item {
+            @include flexbox;
+          }
+          &__video {
+            margin: 0 rem(16px) 0 0;
+          }
+          &__desc {
+            text-align: left;
+          }
+        }
+      }

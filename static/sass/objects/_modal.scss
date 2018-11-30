@@ -1,0 +1,255 @@
+//  --------------------------------------------------
+//  Modal Object
+
+//  - various modals
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-modal {
+      position: fixed;
+      z-index: $z-modals;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transition: top 0.01s linear, bottom 0.01s linear, visibility 0.01s linear;
+      visibility: hidden;
+      pointer-events: none;
+      color: $copy-1;
+
+      &:after {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: $ui-2;
+        opacity: 0;
+        content: '';
+        transition: opacity $timing $ease;
+      }
+
+      &__closeBtn {
+        position: absolute;
+        width: rem(48px);
+        height: rem(48px);
+        background: $copy-1;
+        border: rem(2px) solid white;
+        border-radius: 50%;
+        top: rem(-24px);
+        right: rem(-24px);
+        z-index: 10;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.24);
+        transition: background $timing $ease;
+
+        .a-glyph {
+          fill: white;
+          display: block;
+          margin: 0 auto;
+        }
+
+        &:hover {
+          background: $active-1;
+        }
+      }
+
+      &__linkBtn {
+        padding: rem(8px) rem(12px);
+        display: inline-block;
+      }
+
+      &__box {
+        background: white;
+        @extend %lift-shadow;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 10;
+        opacity: 0;
+        padding: rem(32px) rem(40px) rem(24px);
+        transform: translate(-50%, -100%);
+        transition: transform $timing $ease, opacity $timing $ease;
+
+        &:after,
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          z-index: 1;
+          height: rem(2px);
+          @include gradient-blue-horizontal;
+        }
+
+        &:before {
+          top: 0;
+        }
+
+        &:after {
+          bottom: 0;
+        }
+
+        &ScrollBox {
+          position: absolute;
+          top: rem(72px);
+          left: rem(24px);
+          bottom: rem(24px);
+          right: rem(24px);
+          overflow: auto;
+          border-top: rem(1px) solid $active-2;
+          padding: 0 rem(24px);
+
+
+          .b-videoPlaylist {
+
+            &__item {
+              margin: rem(31px) 0 rem(32px);
+            }
+            &__video {
+              @include flexbox;
+              @include align-content(center);
+              position: relative;
+
+              .a-glyph {
+                width: rem(40px);
+                height: rem(40px);
+                fill: $copy-3;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                -webkit-box-shadow: 0 0 8px 0 rgba(0,0,0,0.16);
+                box-shadow: 0 0 8px 0 rgba(0,0,0,0.16);
+                border-radius: 50%;
+              }
+            }
+          }
+        }
+
+
+        &--small {
+          max-width: rem(480px);
+          width: 100%;
+        }
+
+        &--dialog {
+          top: rem(16px);
+          max-width: rem(400px);
+          width: 100%;
+          padding: rem(24px) rem(24px) rem(32px);
+          text-align: center;
+
+          &:after,
+          &:before {
+            @include gradient-orange-horizontal;
+          }
+
+          .o-modal__actions {
+            margin-top: rem(16px);
+            @include flexbox;
+            @include justify-content(center);
+          }
+        }
+
+        &--maximized {
+          width: calc(100vw - 64px);
+          height: calc(100vh - 64px);
+        }
+      }
+
+
+      &__actions {
+        margin: rem(24px) 0 0 0;
+      }
+
+      &--hide {
+        transition-delay: 0.5s;
+        visibility: hidden;
+        pointer-events: none;
+
+        &:after {
+          opacity: 0;
+        }
+
+        .o-modal__box {
+          opacity: 0;
+          transform: translate(-50%, -100%);
+        }
+      }
+
+      &--show {
+        visibility: visible;
+        pointer-events: auto;
+
+        &:after {
+          opacity: 0.8;
+        }
+
+        .o-modal__box {
+          opacity: 1;
+          transform: translate(-50%, -50%);
+
+          &--dialog {
+            transform: translate(-50%, 0);
+            color: $copy-1;
+          }
+        }
+      }
+    }
+
+    // modal from referral saasquatch
+    .reveal-modal-bg {
+      z-index: 100000 !important;
+    }
+    .reveal-modal {
+      z-index: 1000001 !important;
+    }
+
+//  --------------------------------------------------
+//  tablet styles
+//  ==================================================
+    @media #{ $tablet--start } {
+      .o-modal__box {
+        &--maximized {
+          width: calc(100vw - 128px);
+          height: calc(100vh - 128px);
+        }
+        &--student {
+          max-width:600px;
+          height: auto;
+        }
+      }
+    }
+//  --------------------------------------------------
+//  max-width 532px and min-width 320px
+//  ==================================================
+    @media screen and (max-width: 532px)and (min-width: 375px) {
+      .o-modal__box {
+
+        &ScrollBox {
+          top: rem(96px);
+        }
+      }
+    }
+
+    @media screen and (max-width: 375px)and (min-width: 320px) {
+      .o-modal__box {
+
+        &ScrollBox {
+          top: rem(120px);
+        }
+      }
+    }
+//  --------------------------------------------------
+//  max-width 1366px
+//  ==================================================
+    @media screen and (max-width:1366px){
+       .o-modal__box {
+      
+        &--student {
+          padding: 1rem 1rem 1.5rem;
+        }
+      }
+    }
+    

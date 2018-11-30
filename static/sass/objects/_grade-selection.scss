@@ -1,0 +1,167 @@
+//  --------------------------------------------------
+//  Grade Selection Object
+
+//  - grade selection screen
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-gradeSelection {
+
+      &__grade {
+        background: white;
+        border: rem(1px) solid $ui-2;
+        padding: rem(23px);
+        margin-bottom: rem(24px);
+        text-align: center;
+        transition: border $timing $ease, color $timing $ease, box-shadow $timing $ease, -webkit-box-shadow $timing $ease;
+        position: relative;
+
+        &Link {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 2;
+        }
+
+        &Profile {
+          width: rem(120px);
+          height: rem(120px);
+          margin: rem(16px) auto rem(8px);
+          border-radius: 100%;
+          background: #3DD5FF;
+        }
+
+        &:hover {
+          @extend %lift-shadow;
+          z-index: 10;
+        }
+
+        &--K {
+          color: #FFC000;
+
+          .o-gradeSelection__gradeProfile {
+            border: none;
+            background: #FFC000;
+
+          }
+
+          &:hover {
+            border-color: #FFC000;
+            color: #FFC000;
+          }
+        }
+        &--1 {
+          color: #29E6BB;
+
+          .o-gradeSelection__gradeProfile {
+            border: none;
+            background: #29E6BB;
+
+          }
+
+          &:hover {
+            border-color: #29E6BB;
+            color: #29E6BB;
+          }
+        }
+        &--2 {
+          color: #9761FF;
+
+          .o-gradeSelection__gradeProfile {
+            border: none;
+            background: #9761FF;
+
+          }
+
+          &:hover {
+            border-color: #9761FF;
+            color: #9761FF;
+          }
+        }
+        &--3 {
+          color: #3DD5FF;
+
+          .o-gradeSelection__gradeProfile {
+            border: none;
+            background: #3DD5FF;
+          }
+
+          &:hover {
+            border-color: #3DD5FF;
+            color: #3DD5FF;
+          }
+        }
+        &--4 {
+          color: #84D42D;
+
+          .o-gradeSelection__gradeProfile {
+            border: none;
+            background: #84D42D;
+
+          }
+
+          &:hover {
+            border-color: #84D42D;
+            color: #84D42D;
+          }
+        }
+        &--5 {
+          color: #0C7CC9;
+
+          .o-gradeSelection__gradeProfile {
+            border: none;
+            background: #0C7CC9;
+
+          }
+
+          &:hover {
+            border-color: #0C7CC9;
+            color: #0C7CC9;
+          }
+        }
+        &--6 {
+          color: #BE7617;
+
+          .o-gradeSelection__gradeProfile {
+            border: none;
+            background: #BE7617;
+
+          }
+
+          &:hover {
+            border-color: #BE7617;
+            color: #BE7617;
+          }
+        }
+        &--7 {
+          color: #FF61BF;
+
+          .o-gradeSelection__gradeProfile {
+            border: none;
+            background: #FF61BF;
+
+          }
+
+          &:hover {
+            border-color: #FF61BF;
+            color: #FF61BF;
+          }
+        }
+        &--8 {
+          color: $active-2;
+
+          .o-gradeSelection__gradeProfile {
+            border: none;
+            background: $active-2;
+
+          }
+
+          &:hover {
+            border-color: $active-2;
+            color: $active-2;
+          }
+        }
+      }
+    }

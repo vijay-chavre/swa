@@ -1,0 +1,59 @@
+//  --------------------------------------------------
+//  Modal content Object
+
+//  - modal content styles
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-supportDialog {
+      text-align: center;
+      padding: 0 0 rem(8px);
+      margin: rem(-8px) rem(-8px) 0;
+
+      .o-modal__actions {
+        @include flexbox;
+        @include justify-content(center);
+        display: block;
+        margin-top: rem(16px);
+        padding: 0 rem(76px);
+
+        .b-flatBtn {
+          max-width: rem(280px);
+          width: 100%;
+          margin-bottom: rem(8px);
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      .b-textarea {
+        margin-top: rem(16px);
+      }
+
+    }
+
+    .o-flagDialog {
+      text-align: center;
+      margin: 0 rem(-16px);
+
+      .o-modal__actions {
+        @include flexbox;
+        @include justify-content(center);
+        margin: rem(16px) 0 rem(8px);
+      }
+
+      &__options {
+        margin: rem(16px) 0 rem(8px);
+      }
+
+      .b-textarea {
+        margin-top: rem(16px);
+        overflow: auto;
+      }
+
+      .b-flatBtn {
+        width: rem(280px);
+      }
+    }

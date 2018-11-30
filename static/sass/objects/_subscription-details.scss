@@ -1,0 +1,44 @@
+//  --------------------------------------------------
+//  Subscription Details Object
+
+//  - breakdown of subscription items
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-subscriptionDetails {
+      padding: rem(15px) 0 rem(24px);
+      border-top: rem(1px) solid $active-2;
+      border-bottom: rem(2px) solid $active-2;
+
+      &__item {
+        @include flexbox;
+
+        &Name {
+          @include flex-grow(1);
+        }
+
+        &Price {
+          text-align: right;
+          @include flex-basis(rem(88px));
+        }
+
+        &--divider {
+          position: relative;
+          padding:0 0 rem(32px);
+
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: rem(16px);
+            left: 0;
+            right: 0;
+            height: rem(1px);
+            background: $ui-2;
+          }
+        }
+
+        &--total {
+          padding: rem(22px) 0 0 0;
+        }
+      }
+    }

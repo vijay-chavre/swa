@@ -1,0 +1,91 @@
+//  --------------------------------------------------
+//  CircleBox Basics
+
+//  - content presented in circled boxes
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-circleBox {
+      border-radius: 50%;
+      color: white;
+      text-align: center;
+      margin: rem(24px) auto 0;
+      background: $active-1;
+
+      &--size\(64\) {
+        width: rem(64px);
+        height: rem(64px);
+        font-size: rem(36px);
+        line-height: rem(48px);
+      }
+
+      &--size\(48\) {
+        width: rem(48px);
+        height: rem(48px);
+        font-size: rem(24px);
+        line-height: rem(48px);
+      }
+      &--size\(44\) {
+        width: rem(44px);
+        height: rem(44px);
+        font-size: rem(24px);
+        line-height: rem(44px);
+        margin-bottom: rem(12px);
+      }
+      &--size\(32\) {
+        width: rem(32px);
+        height: rem(32px);
+        font-size: rem(16px);
+        line-height: rem(24px);
+      }
+
+      &--color\(active-2\) {
+        background: $active-2;
+      }
+      &--color\(active-3\) {
+        background: $active-3;
+      }
+      &--color\(active-4\) {
+        background: $active-4;
+      }
+      &--color\(copy-2\) {
+        background: $copy-2;
+      }
+
+      &--bordered {
+        background: none;
+        color: $active-1;
+        border: rem(1px) solid $active-1;
+
+        &--color\(active-2\) {
+          background: none;
+          color: $active-2;
+          border-color: $active-2;
+        }
+        &--color\(active-3\) {
+          background: none;
+          color: $active-3;
+          border-color: $active-3;
+        }
+        &--color\(active-4\) {
+          background: none;
+          color: $active-4;
+          border-color: $active-4;
+        }
+      }
+    }
+
+//  --------------------------------------------------
+//  mobile only styles (default)
+//  ==================================================
+    @media #{ $mobile--only } {
+
+      .b-circleBox {
+        &--size\(24\) {
+          width: rem(24px);
+          height: rem(24px);
+          font-size: rem(14px);
+          line-height: rem(16px);
+        }
+      }
+    }

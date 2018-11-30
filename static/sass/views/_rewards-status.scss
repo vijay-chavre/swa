@@ -1,0 +1,20 @@
+//  --------------------------------------------------
+//  Rewards Status content Object View
+
+//  - Rewards Status display styles
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .v-rewardsStatus {
+
+      &__intro {
+        padding-bottom: rem(32px);
+      }
+      &__card {
+        margin-bottom: rem(16px);
+      }
+      &__giftCardSelector {
+        padding: rem(72px) 0 rem(40px) 0;
+        text-align: center;
+      }
+    }

@@ -1,0 +1,276 @@
+//  --------------------------------------------------
+//  Typography abstracts
+
+//  - rules for how type should appear on the page
+
+//  ==================================================
+    .a-squash {
+      height: 0;
+      overflow: hidden;
+      position: absolute;
+    }
+
+    .a-allCaps {
+      text-transform: uppercase;
+    }
+
+    .a-ellipsis {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    // remove padding for non-baseline alignment
+    .-offBase {
+      padding: 0;
+    }
+
+    // adds breaking spaces between paragraphs
+    .a-break {
+
+      &:before,
+      &:after {
+        content: '';
+        height: rem(16px);
+        display: block;
+      }
+
+      &--before:after {
+        content: none;
+      }
+
+      &--after:before {
+        content: none;
+      }
+    }
+
+    // alignment
+    .a-justify\(center\) {
+      text-align: center;
+    }
+
+    .a-strong {
+      font-weight: $font-bold;
+    }
+
+    .a-strike {
+      text-decoration: line-through;
+    }
+
+
+    // header styles
+    .a-h\(64\) {
+      font-size: rem(64px);
+      line-height: rem(72px);
+      padding: rem(24px) 0;
+      font-weight: $font-normal;
+    }
+    .a-h\(36\) {
+      font-size: rem(36px);
+      line-height: rem(48px);
+      padding: rem(8px) rem(4px);
+      font-weight: $font-normal;
+    }
+    .a-h\(28\) {
+      @extend %titles;
+      font-size: rem(28px);
+      line-height: rem(32px);
+      margin: rem(-1px) 0 0 0;
+      padding: 0 0 rem(1px);
+      font-weight: $font-normal;
+
+      &--lineHr {
+        padding-bottom: 39px;
+        position: relative;
+
+        &:after {
+          width: 100%;
+          height: rem(1px);
+          background: $active-2;
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: rem(23px);
+          left: 0;
+        }
+      }
+    }
+    .a-h\(22\) {
+      @extend %titles;
+      font-size: rem(22px);
+      line-height: rem(32px);
+      font-weight: $font-normal;
+    }
+    .a-h\(20\) {
+      @extend %titles;
+      font-size: rem(20px);
+      line-height: rem(24px);
+      font-weight: $font-bold;
+      padding: rem(5px) 0 rem(3px);
+    }
+    .a-h\(18\) {
+      @extend %titles;
+      font-size: rem(18px);
+      line-height: rem(24px);
+      padding: rem(6px) 0 rem(2px);
+      font-weight: $font-bold;
+
+      &--hasDivider {
+        padding-bottom: rem(9px);
+        border-bottom: rem(1px) solid $active-2;
+      }
+    }
+
+
+
+    // subheader styles
+    .a-s\(12\) {
+      font-size: rem(12px);
+      line-height: rem(16px);
+      letter-spacing: 0.1em;
+      padding: rem(4px) 0;
+      font-weight: $font-bold;
+    }
+    .a-s\(14\) {
+      font-size: rem(14px);
+      line-height: rem(24px);
+      letter-spacing: 0.1em;
+      margin: rem(-1px) 0 0 0;
+      padding: 0 0 rem(1px);
+      font-weight: $font-bold;
+    }
+    .a-s\(20\) {
+      font-size: rem(20px);
+      line-height: rem(24px);
+      font-weight: $font-bold;
+    }
+    .a-s\(22\) {
+      font-size: rem(22px);
+      line-height: rem(32px);
+      font-weight: $font-bold;
+      margin: rem(1px) 0 rem(-2px) 0;
+      padding: 0 0 rem(1px);
+    }
+
+
+    .a-s\(18\) {
+      font-size: rem(18px);
+      line-height: rem(24px);
+      padding: rem(6px) 0 rem(2px);
+      font-weight: $font-bold;
+
+      &__decorator {
+        padding: rem(6px) rem(28px) rem(2px);
+        position: relative;
+
+        &:before,
+        &:after {
+          content: '\2014';
+          position: absolute;
+        }
+        &:before {
+          left: 0;
+        }
+        &:after {
+          right: 0;
+        }
+      }
+    }
+
+
+    // paragraph styles
+    .a-p\(10\) {
+      font-size: rem(10px);
+      line-height: rem(16px);
+      // padding: rem(4px) 0;
+    }
+    .a-p\(12\) {
+      font-size: rem(12px);
+      line-height: rem(16px);
+      padding: rem(4px) 0;
+    }
+    .a-p\(13\) {
+      font-size: rem(13px);
+      line-height: rem(16px);
+      padding: rem(3px) 0 rem(5px);
+
+    }
+    .a-p\(14\) {
+      font-size: rem(14px);
+      line-height: rem(24px);
+      padding: rem(7px) 0 rem(1px);
+
+      &--spacerTop {
+        padding-top: rem(15px);
+      }
+
+      &--intro {
+        margin: rem(24px) 0;
+      }
+    }
+
+    .a-p\(16\) {
+      font-size: rem(16px);
+      line-height: rem(24px);
+      margin: rem(-1px) 0 0 0;
+      padding: 0 0 rem(1px);
+    }
+
+
+    // links
+    .a-link {
+      border-bottom: rem(1px) dashed $active-1;
+      transition: color $timing $ease, border $timing $ease;
+
+      &:hover {
+        border-bottom: rem(1px) solid $active-1b;
+      }
+
+      &.a-color\(active-2\) {
+        color: $active-2;
+        border-color: $active-2;
+
+        &:hover {
+          color: $active-1b;
+          border-color: $active-1b;
+        }
+      }
+    }
+
+
+
+    // color
+    .a-color\(copy-1\) {
+      color: $copy-1;
+    }
+    .a-color\(copy-2\) {
+      color: $copy-2;
+    }
+    .a-color\(copy-3\) {
+      color: $copy-3;
+    }
+
+    .a-color\(active-1\) {
+      color: $active-1;
+    }
+    .a-color\(active-1b\) {
+      color: $active-1b;
+    }
+    .a-color\(active-2\) {
+      color: $active-2;
+    }
+    .a-color\(active-3\) {
+      color: $active-3;
+    }
+    .a-color\(active-4\) {
+      color: $active-4;
+    }
+    .a-color\(alert\) {
+      color: $alert;
+    }
+    .a-color\(white\) {
+      color: white;
+    }
+    .a-color\(active-5\) {
+      color: $active-5;
+    }

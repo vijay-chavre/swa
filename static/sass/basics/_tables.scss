@@ -1,0 +1,35 @@
+//  --------------------------------------------------
+//  Table Basics
+
+//  - styles for displaying data in tables
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-table {
+      max-width: rem(360px);
+      margin: 0 auto;
+      font-size: rem(18px);
+      line-height: rem(24px);
+
+
+      &__row {
+        @include flexbox;
+        @include align-items(center);
+        padding: rem(12px) rem(16px);
+
+        &:nth-child(odd) {
+          background: $ui-3;
+        }
+      }
+
+      &__cell {
+
+        &--name {
+          @include flex-grow(1);
+        }
+
+        &--value {
+
+        }
+      }
+    }

@@ -1,0 +1,91 @@
+//  --------------------------------------------------
+//  Performance Report object
+
+//  - styles for displaying a performance report summary
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+
+    .o-perfReport__sample {
+      @include flexbox;
+      margin: rem(32px) auto;
+      max-width: rem(400px);
+      min-height: rem(192px);
+
+      &Matrix {
+        @include flex-basis(50%);
+        background: white url('/images/sample-matrix@2x.png') center center no-repeat;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        border: rem(4px) solid white;
+      }
+
+      &Info {
+        background: $active-3;
+        padding: rem(16px);
+        @include flex-basis(50%);
+        @include flexbox;
+        @include justify-content(center);
+        @include flex-wrap(nowrap);
+        @include flex-direction(column);
+        color: white;
+        font-size: rem(16px);
+        line-height: rem(24px);
+      }
+    }
+
+    .o-perfReport__summary {
+      @include flexbox;
+      @include justify-content(center);
+      @include flex-wrap(wrap);
+      padding: rem(8px) 0;
+
+      &Score {
+        position: relative;
+        margin: 0 rem(8px);
+        @include flex-basis( rem(168px) );
+
+      }
+
+      &Label {
+        display: block;
+        font-size: rem(14px);
+        line-height: rem(16px);
+        padding: rem(3px) 0 rem(5px);
+        color: $copy-2;
+      }
+
+      &Value {
+        font-size: rem(28px);
+        line-height: rem(32px);
+        font-weight: 300;
+        display: block;
+        padding: rem(6px) 0 rem(2px);
+      }
+    }
+
+
+//  --------------------------------------------------
+//  tablet styles
+//  ==================================================
+    @media #{ $tablet--start } {
+      .o-perfReport__summary {
+
+        &Score {
+          &:after {
+            width: rem(2px);
+            background: $ui-2;
+            content: '';
+            position: absolute;
+            top: rem(8px);
+            bottom: rem(8px);
+            right: rem(-7px);
+            display: block;
+          }
+
+          &:last-child:after {
+            display: none;
+          }
+        }
+      }
+    }

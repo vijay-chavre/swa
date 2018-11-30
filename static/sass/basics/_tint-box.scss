@@ -1,0 +1,30 @@
+//  --------------------------------------------------
+//  Tint Box Basics
+
+//  - styles for boxed content of various colors
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-tintBox {
+      border: rem(1px) solid $active-1;
+      padding: rem(15px) rem(19px);
+      background: $tint-1;
+
+      &__actions {
+        padding: rem(16px) 0 rem(8px);
+      }
+
+      &--tint2 {
+        border-color: $active-2;
+        background: $tint-2;
+      }
+      &--tint3 {
+        border-color: $active-3;
+        background: $tint-3;
+      }
+
+      &--white {
+        border-color: $ui-2;
+        background: white;
+      }
+    }

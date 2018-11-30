@@ -1,0 +1,21 @@
+//  --------------------------------------------------
+//  Border Box Basics
+
+//  - styles for boxed content of various border colors
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-borderBox {
+      border: rem(1px) solid $active-1;
+      padding: rem(15px) rem(19px);
+      margin-top: rem(-8px);
+      background: white;
+
+      &__actions {
+        padding: rem(16px) 0 rem(8px);
+      }
+
+      &--active1 {
+        border-color: $active-1;
+      }
+    }

@@ -1,0 +1,310 @@
+//  --------------------------------------------------
+//  SUPER VILLAIN SETUP VARIABLES AND FUNCTIONS
+
+//  - globally used variables, colors, etc.
+//  - some globally used css helpers that are page / app agnostic (eg: clearfix)
+
+//  ==================================================
+
+
+
+//  --------------------------------------------------
+//  functions
+//  ==================================================
+//  converts px to rem
+    @function rem($px, $base: $root-font-size) {
+      @return ($px / $base) * 1rem;
+    }
+    @function spacing($px) {
+      @return -($px / 40);
+    }
+
+
+
+//  --------------------------------------------------
+//  fonts & typography variables
+//  ==================================================
+    $root-font-size: 16px;
+    $copy-font: 'Montserrat', 'Helvetica', Arial, sans-serif;
+    $title-font: 'Raleway', 'Work Sans', 'Helvetica', Arial, sans-serif;
+
+    // optional font weight vars so that you don't have to remember the numbers
+    //$font-thin: 100;
+    $font-light: 300;
+    $font-normal: 400;
+    $font-medium: 500;
+    $font-semibold: 600;
+    $font-bold: 700;
+    $font-extrabold: 800;
+    //$font-heavy: 900;
+
+    %titles {
+      font-family: $title-font;
+      font-weight: 800;
+    }
+
+
+
+//  --------------------------------------------------
+//  color variables
+//  ==================================================
+    $copy-1: #242424;
+    $copy-2: #748084;
+    $copy-3: #99A3A6;
+
+    $ui-1: #DEDEDE;
+    $ui-2: #EEEEEE;
+    $ui-3: #F4F4F4;
+
+    $copy-selected: #ff5100;
+
+    $active-1: #00B4F1; //blue
+    $active-1b: #008FF1; //darker blue
+    $active-1c: #2B525F; //darkest blue
+    $active-2: #FD7F20; //orange
+    $active-3: #14C81F; //green
+    $active-3b: #62c814; //lighter green
+    $active-4: #A061FF; //purple
+    $active-5: #F022BE; //pink
+
+    $alert: #DD0000;    //red
+
+    $yellow: #FFDD00;
+
+
+    $tint-1: #EBF9FE; //blue
+    $tint-1b: #D6F3FD; //blue
+    $tint-2: #FFF5EE; //orange
+    $tint-2b: #FEEADB; //orange
+    $tint-3: #EDFBED; //green
+    $tint-3b: #D9F6DB; //green
+    $tint-4: #F8F3FF; //purple
+    $tint-4b: #EBF9FE; //purple
+    $tint-5: #F9D6D6; //red
+    $tint-5b: #FDEBEB; //red
+
+    $tint-1b: #D7F3FD; //16% blue
+    $tint-2b: #FFEBDC; //16% orange
+    $tint-3b: #DAF6DC; //16% green
+
+    @mixin gradient-orange-vertical {
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fd6c00+0,f75500+100 */
+      background: #fd6c00; /* Old browsers */
+      background: -moz-linear-gradient(top,  #fd6c00 0%, #f75500 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top,  #fd6c00 0%,#f75500 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom,  #fd6c00 0%,#f75500 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd6c00', endColorstr='#f75500',GradientType=0 ); /* IE6-9 */
+    }
+
+    @mixin gradient-orange-horizontal {
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fd6c00+0,f75500+100 */
+      background: #fd6c00; /* Old browsers */
+      background: -moz-linear-gradient(left,  #fd6c00 0%, #f75500 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(left,  #fd6c00 0%,#f75500 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to right,  #fd6c00 0%,#f75500 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd6c00', endColorstr='#f75500',GradientType=1 ); /* IE6-9 */
+    }
+
+    @mixin gradient-green-vertical {
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#62c814+0,14c81f+100 */
+      background: #62c814; /* Old browsers */
+      background: -moz-linear-gradient(top,  #62c814 0%, #14c81f 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top,  #62c814 0%,#14c81f 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom,  #62c814 0%,#14c81f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#62c814', endColorstr='#14c81f',GradientType=0 ); /* IE6-9 */
+    }
+
+    @mixin gradient-green-horizontal {
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#62c814+0,14c81f+0 */
+      background: #62c814; /* Old browsers */
+      background: -moz-linear-gradient(left,  #62c814 0%, #14c81f 0%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(left,  #62c814 0%,#14c81f 0%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to right,  #62c814 0%,#14c81f 0%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#62c814', endColorstr='#14c81f',GradientType=1 ); /* IE6-9 */
+    }
+
+    @mixin gradient-blue-vertical {
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00b4f1+0,0098f1+100 */
+      background: #00b4f1; /* Old browsers */
+      background: -moz-linear-gradient(top,  #00b4f1 0%, #0098f1 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top,  #00b4f1 0%,#0098f1 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom,  #00b4f1 0%,#0098f1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b4f1', endColorstr='#0098f1',GradientType=0 ); /* IE6-9 */
+    }
+
+    @mixin gradient-blue-horizontal {
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00b4f1+0,0098f1+100 */
+      background: #00b4f1; /* Old browsers */
+      background: -moz-linear-gradient(left,  #00b4f1 0%, #0098f1 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(left,  #00b4f1 0%,#0098f1 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to right,  #00b4f1 0%,#0098f1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b4f1', endColorstr='#0098f1',GradientType=1 ); /* IE6-9 */
+    }
+
+
+    @mixin gradient-teal-diagonal {
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00bdd3+0,009acf+100 */
+      background: #00bdd3; /* Old browsers */
+      background: -moz-linear-gradient(-45deg,  #00bdd3 0%, #009acf 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(-45deg,  #00bdd3 0%,#009acf 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(135deg,  #00bdd3 0%,#009acf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00bdd3', endColorstr='#009acf',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    }
+
+    @mixin gradient-lavender-horizontal {
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ac83eb+1,9183eb+100 */
+      background: #ac83eb; /* Old browsers */
+      background: -moz-linear-gradient(left, #ac83eb 1%, #9183eb 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(left, #ac83eb 1%,#9183eb 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to right, #ac83eb 1%,#9183eb 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ac83eb', endColorstr='#9183eb',GradientType=1 ); /* IE6-9 */
+    }
+
+
+//  --------------------------------------------------
+//  stacking context variables
+//  ==================================================
+    $z-lift:       50;
+    $z-chrome:     500;
+    $z-modals:     5000;
+    $z-guidance:   50000;
+    $z-dialogs:    500000;
+    $z-overwrite:  500000000000;
+
+
+
+
+//  --------------------------------------------------
+//  animation easing formulas
+//  ==================================================
+    // easeOutQuad is used as default.
+    $timing: 0.3s;
+    $ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    //$easeOutSine: cubic-bezier(0.39, 0.575, 0.565, 1);
+    //$easeInOutSine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+    //$easeOutQuad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    //$easeInOutQuad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+    //$easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+    $easeInOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    //$easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
+    //$easeInOutQuart: cubic-bezier(0.77, 0, 0.175, 1);
+
+    //$easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    //$easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+
+
+    @keyframes spin-loop {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+
+
+//  --------------------------------------------------
+//  media query variables
+//  - turn these on as needed or modify for project
+//  - use by calling : @media #{<media query variable>} { <styles> }
+//  ==================================================
+
+    // mobile portrait only : screen size is -479px
+    $mobile-portrait--only: 'only screen and (max-width : 479px)';
+
+    // screen size is 480px+
+    //$mobile-landscape--start: 'only screen and (min-width : 480px)';
+    // screen size is 480px - 639px
+    $mobile-landscape--only: 'only screen and (min-width : 480px) and (max-width : 639px)';
+
+    // mobile only : screen size is -639px
+    $mobile--only: 'only screen and (max-width : 639px)';
+
+    // $tablet-small-1--only: 'only screen and (min-width : 500px) and (max-width : 640px)';
+
+    // screen size is 640px+
+    $tablet--start: 'only screen and (min-width : 640px)';
+    // screen size is 640px - 719px
+    $tablet-small-1--only: 'only screen and (min-width : 640px) and (max-width : 719px)';
+
+    // screen size is 720px+
+    //$tablet-small-2--start: 'only screen and (min-width : 720px)';
+    // screen size is 720px - 799px
+    $tablet-small-2--only: 'only screen and (min-width : 720px) and (max-width : 799px)';
+
+    // screen size is 800px+
+    $tablet-medium-1--start: 'only screen and (min-width : 800px)';
+    // screen size is 800px - 959px
+    $tablet-medium-1--only: 'only screen and (min-width : 800px) and (max-width : 959px)';
+
+    // tablet only : screen size is 640px - 959px
+    $tablet--only: 'only screen and (min-width : 640px) and (max-width : 959px)';
+
+
+
+    // screen size is 960px+
+    $desktop--start: 'only screen and (min-width : 960px)';
+    // screen size is 960px - 1023px
+    $desktop-small-1--only: 'only screen and (min-width : 960px) and (max-width : 1023px)';
+
+    // screen size is 1024px+
+    $desktop-small-2--start: 'only screen and (min-width : 1024px)';
+    // screen size is 1024px - 1279px
+    $desktop-small-2--only: 'only screen and (min-width : 1024px) and (max-width : 1279px)';
+    $desktop-small-3--start: 'only screen and (min-width : 1152px)';
+
+    // screen size is 1280px+
+    $desktop-medium-1--start: 'only screen and (min-width : 1280px)';
+    // screen size is 1280px - 1439px
+    $desktop-medium-1--only: 'only screen and (min-width : 1280px) and (max-width : 1439px)';
+
+    // screen size is 1440px+
+    $desktop-medium-2--start: 'only screen and (min-width : 1440px)';
+    // screen size is 1440px - 1679px
+    //$desktop-medium-2--only: 'only screen and (min-width : 1440px) and (max-width : 1679px)';
+
+    // screen size is 1680px+
+    $desktop-large-1--start: 'only screen and (min-width : 1680px)';
+    $desktop-large-2--start: 'only screen and (min-width : 1920px)';
+
+
+//  --------------------------------------------------
+//  helpers & mixins
+//  ==================================================
+    // shadows
+    %small-shadow {
+      -webkit-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    }
+    %lift-shadow {
+      -webkit-box-shadow: 0 48px 32px 0 rgba(0,0,0,0.2);
+      box-shadow: 0 48px 32px 0 rgba(0,0,0,0.2);
+    }
+
+    $appHeaderHeight: rem(64px);
+    $sideBarWidth: rem(80px);
+    $toolBarWidth: rem(56px);
+
+    //tile object with top border
+    %tile-box {
+      background: white;
+      padding: rem(24px) rem(24px) 0;
+      text-align: center;
+      position: relative;
+      transition: border $timing $ease, color $timing $ease, box-shadow $timing $ease, -webkit-box-shadow $timing $ease;
+
+      &:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        right: 0;
+        height: rem(1px);
+      }
+    }

@@ -1,0 +1,158 @@
+//  --------------------------------------------------
+//  LogIn Object
+
+//  - styles for login page
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-login {
+      min-height: 100vh;
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+      @include gradient-teal-diagonal;
+      padding: rem(40px) 0;
+      position: relative;
+
+      &:after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: url('../images/math-bg.png') 0 0;
+        opacity: 0.32;
+      }
+
+      &Box {
+        background: white;
+        @extend %lift-shadow;
+        position: relative;
+        z-index: 10;
+        width: rem(440px);
+        height: auto;
+        padding: rem(40px) rem(40px) rem(32px);
+        text-align: center;
+
+
+        &__instructions {
+          margin-bottom: rem(8px);
+        }
+
+        &__form {
+          margin: rem(48px) 0 rem(16px) 0;
+
+          .b-formTextInput__input {
+
+            &:hover,
+            &:focus {
+              border-color: $ui-1;
+            }
+            &:focus {
+              background: #EDFBFF;
+            }
+          }
+
+          .b-formTextInput {
+            margin-top: rem(-1px);
+
+            &:first-child {
+              margin-top: 0;
+            }
+          }
+
+          &Fields {
+            padding: 0 0 rem(8px);
+
+            &--reset {
+              padding: 0 0 rem(12px);
+            }
+          }
+        }
+
+        &__actions {
+          margin: rem(16px) 0 0 0;
+        }
+
+        &__pwReset {
+          margin: rem(8px) 0 0 0;
+        }
+
+        &__guest {
+          @include flexbox;
+          @include align-content(center);
+          @include justify-content(center);
+          background: $active-1c;
+          padding: rem(16px) 0;
+          margin: 0 rem(-40px) rem(-32px);
+          font-size: rem(16px);
+          line-height: rem(24px);
+          color: white;
+          cursor: pointer;
+
+          .a-glyph {
+            fill: $yellow;
+            margin-left: rem(8px);
+          }
+
+          &:hover {
+            @include gradient-blue-horizontal;
+            color: white;
+          }
+        }
+      }
+
+      &Alts {
+
+        &__methods {
+          @include flexbox;
+          margin: 0 0 rem(16px);
+          padding: rem(8px) 0;
+        }
+
+        &__method {
+          @include flex-basis(50%);
+          margin: 0 rem(8px) 0 0;
+          text-align: left;
+
+          .b-flexBtn {
+            padding-top: rem(3px);
+            padding-bottom: rem(3px);
+            &--facebook {
+              color: #3A5999;
+              border-color: #3A5999;
+            }
+
+            &--google {
+              color: #4285F4;
+              border-color: #4285F4;
+            }
+          }
+
+          &:last-child {
+            margin: 0;
+          }
+        }
+
+        .a-glyph {
+          width: rem(24px);
+          height: rem(24px);
+          margin: 0 rem(8px) 0 0;
+        }
+      }
+
+      &Actions {
+        margin: rem(-8px) 0 rem(24px);
+        @include flexbox;
+
+        &__link {
+          @include flex-basis(50%);
+          text-align: left;
+
+          a:hover {
+            color: $active-1;
+          }
+        }
+      }
+    }

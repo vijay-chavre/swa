@@ -1,0 +1,171 @@
+//  --------------------------------------------------
+//  Worksheet Page Header Object
+
+//  - displays for worksheet page header
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-worksheetPageHeader {
+      position: fixed;
+      width: 100%;
+      left: 0;
+      top: rem(48px);
+      z-index: $z-chrome;
+    }
+
+    .o-worksheetMetaBar {
+      padding: rem(4px) rem(24px) rem(4px) rem(16px);
+      width: 100%;
+      background: $ui-3;
+      @include flexbox;
+      @include justify-content(flex-end);
+      -webkit-box-shadow: 0 -1px 0 0 $ui-2;
+      box-shadow: 0 -1px 0 0 $ui-2;
+
+      &__stats {
+        @include flexbox;
+      }
+
+      .o-reviewNavigator ~ .o-worksheetMetaBar__stats {
+        // margin-top: rem(-4px);
+        @include flex-direction(column);
+        @include align-items(flex-end);
+        @include align-self(center);
+      }
+
+      &__tallyBar {
+        padding: rem(12px) 0;
+
+        .b-count {
+          margin-right: rem(16px);
+          font-size: rem(14px);
+          line-height: rem(16px);
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          &--secondTry {
+            display: none;
+          }
+
+          &--skipped {
+            display: none;
+          }
+        }
+      }
+
+      .o-reviewNavigator ~ .o-worksheetMetaBar__stats {
+        .o-worksheetMetaBar__tallyBar {
+          padding: 0 0 rem(7px);
+        }
+      }
+
+      .o-worksheetNavigator ~ .o-worksheetMetaBar__stats {
+        width: 100%;
+        .o-worksheetMetaBar__tallyBar {
+          @include flex-grow(1);
+        }
+      }
+
+      &__indicators {
+        @include align-self(center);
+        @include flexbox;
+        color: $copy-2;
+
+        .b-indicator, .b-count {
+          font-size: rem(14px);
+          line-height: rem(16px);
+          font-weight: $font-normal;
+        }
+
+        .a-glyph {
+          fill: $copy-3;
+        }
+
+        .b-count {
+
+          &--points {
+            display: none;
+            margin-right: rem(16px);
+          }
+        }
+      }
+    }
+
+
+//  --------------------------------------------------
+//  mobile screen size is 479px+
+//  ==================================================
+    @media #{ $mobile-portrait--only } {
+      .o-worksheetMetaBar {
+
+        .b-count {
+
+          &--secondTry {
+            display: none;
+          }
+        }
+      }
+    }
+//  --------------------------------------------------
+//  tablet styles screen size is 640px+
+//  ==================================================
+    @media #{ $tablet--start } {
+      .o-worksheetMetaBar {
+
+        .b-count {
+
+          &--secondTry {
+            display: inline;
+          }
+
+          &--skipped {
+            display: inline;
+          }
+        }
+
+        &__indicators {
+
+          .b-count {
+            &--points {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+//  --------------------------------------------------
+//  tablet styles screen size is 720px - 799px
+//  ==================================================
+
+    @media #{ $tablet-small-1--only } {
+      .o-worksheetMetaBar {
+
+        .b-count {
+
+          &--skipped {
+            display: none;
+          }
+        }
+      }
+    }
+
+
+//  --------------------------------------------------
+//  desktop styles screen size is 960px+
+//  ==================================================
+
+    @media #{ $desktop--start } {
+
+      .o-worksheetMetaBar {
+
+        .b-count {
+
+          &--skipped {
+            display: inline;
+          }
+        }
+      }
+    }

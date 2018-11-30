@@ -1,0 +1,102 @@
+//  --------------------------------------------------
+//  Drop Down Selector Menu Basics
+
+//  - for displaying drop down option menus in forms
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-dropDownSelector {
+      display: block;
+
+      &__label {
+        font-size: rem(14px);
+        line-height: rem(16px);
+        color: $copy-2;
+        position: absolute;
+        top: 50%;
+        left: rem(24px);
+        transform: translateY(-19px);
+        transition: transform 0.3s $ease;
+        pointer-events: none;
+      }
+
+      &__select {
+        font-size: rem(16px);
+        line-height: rem(24px);
+        padding: rem(7px) rem(16px);
+        border: rem(1px) solid $ui-1;
+        transition: border-color 0.3s $ease, color 0.3s $ease;
+        display: block;
+        width: 100%;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        background: white;
+        border-radius: 0;
+        cursor: pointer;
+        position: relative;
+
+        &:after {
+          width: rem(16px);
+          height: rem(9px);
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: rem(16px);
+          content: '';
+          background: url('/images/glyph-wedge-down.svg') 50% 50% / contain no-repeat;
+          pointer-events: none;
+        }
+
+        .a-glyph {
+          fill: $copy-2;
+          width: rem(16px);
+          height: rem(9px);
+          position: absolute;
+          top: 50%;
+          left: 100%;
+          transform: translateY(-50%);
+          z-index: 10;
+        }
+
+        &:hover {
+          border-color: $active-1b;
+        }
+        &:focus {
+          border-color: $active-1;
+          & + .b-dropDownSelector__label {
+            transform: translateY(-19px);
+          }
+        }
+
+        &Arrow {
+          background-image: url('/images/glyph-wedge-down.svg');
+          background-size: rem(16px) rem(9px);
+          background-repeat: no-repeat;
+          background-position-x: calc(100% - 16px);
+          background-position-y: center;
+        }
+      }
+
+
+      &--error {
+        .b-dropDownSelector__select {
+          border-color: $alert;
+          padding-left: rem(20px);
+          border-left: rem(4px) solid $alert;
+        }
+        .b-dropDownSelector__label {
+          color: $alert;
+        }
+      }
+    }
+
+//  --------------------------------------------------
+//  tablet styles (default)
+//  ==================================================
+    @media #{ $tablet-medium-1--start } {
+
+      .b-dropDownSelector {
+        @include flex-basis(100%);
+        @include flexbox;
+      }
+    }

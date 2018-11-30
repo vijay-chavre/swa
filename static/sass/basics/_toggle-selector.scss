@@ -1,0 +1,102 @@
+//  --------------------------------------------------
+//  toggle-Selector Basic
+
+//  - styles for displaying toggle-selector
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-toggleSelector {
+      @include flexbox;
+      @include flex-direction(column);
+      @include align-items(flex-start);
+
+      &__btn {
+        border-radius: rem(4px);
+        width: rem(24px);
+        height: rem(4px);
+        background: $ui-2;
+        position: relative;
+        top: rem(4px);
+        left: rem(-16px);
+        transform: rotate(90deg);
+
+        &Control {
+          width: rem(16px);
+          height: rem(16px);
+          border-radius: 50%;
+          position: absolute;
+          left: rem(-8px);
+          top: 50%;
+          transform: translateY(-50%);
+          background: $active-1;
+          -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+          box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+          transition: transform 0.2s $ease;
+        }
+
+        &--showAll {
+          .b-toggleSelector__btnControl {
+            transform: translate(0%, -50%);
+          }
+        }
+
+        &--incorrect {
+          top: rem(-4px);
+          .b-toggleSelector__btnControl {
+            transform: translate(150%, -50%);
+          }
+        }
+      }
+
+      &__option {
+
+        &Name {
+          display: block;
+          font-weight: $font-medium;
+          font-size: rem(12px);
+          line-height: rem(16px);
+          color: $copy-2;
+          transition: color $timing $ease;
+          margin: rem(-2px) 0 rem(-2px) rem(32px);
+        }
+
+        &:hover {
+          .b-toggleSelector__optionName {
+            color: $active-1b;
+          }
+        }
+
+        &--selected {
+          .b-toggleSelector__optionName {
+            color: $active-1;
+          }
+        }
+      }
+    }
+
+
+//  --------------------------------------------------
+//  desktop styles
+//  ==================================================
+
+    @media #{ $desktop--start } {
+      .b-toggleSelector {
+        @include flex-direction(row);
+        @include align-items(center);
+
+        &__btn {
+          transform: rotate(0deg);
+          top: 0;
+          left: 0;
+
+          &Control {
+            transform: translateY(-50%);
+          }
+        }
+
+        &__optionName {
+          margin: 0;
+          padding: rem(4px) 0;
+        }
+      }
+    }

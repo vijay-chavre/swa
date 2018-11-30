@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="108px" height="121px" viewBox="0 0 108 121" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Polygon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Pricing-Flow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="k-5-month" transform="translate(-782.000000, -1088.000000)" fill="#EEEEEE">
+            <g id="all-plans-include-B" transform="translate(176.000000, 1088.000000)">
+                <path d="M654.797744,1.23411947 C657.670871,-0.413814391 662.337645,-0.408930108 665.202256,1.23411947 L708.797744,26.2391021 C711.670871,27.887036 714,31.9045476 714,35.2188164 L714,85.1724424 C714,88.4838678 711.662355,92.5091071 708.797744,94.1521567 L665.202256,119.157139 C662.329129,120.805073 657.662355,120.800189 654.797744,119.157139 L611.202256,94.1521567 C608.329129,92.5042228 606,88.4867112 606,85.1724424 L606,35.2188164 C606,31.907391 608.337645,27.8821517 611.202256,26.2391021 L654.797744,1.23411947 Z" id="Polygon"></path>
+            </g>
+        </g>
+    </g>
+</svg>

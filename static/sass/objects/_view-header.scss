@@ -1,0 +1,16 @@
+//  --------------------------------------------------
+//  View Header Object
+
+//  - header for views within the app
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .a-viewHeader {
+      @include flexbox;
+      @include align-items(center);
+      padding: rem(24px) 0 rem(40px);
+
+      &--mBottom\(24\) {
+        margin-bottom: rem(-16px);
+      }
+    }

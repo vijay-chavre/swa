@@ -1,0 +1,50 @@
+//  --------------------------------------------------
+//  Thinkster Brand Object
+
+//  - display of logos and branding
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-thinkster {
+      @include flexbox;
+      @include align-items(center);
+
+      &__logomark {
+        width: rem(32px);
+        height: rem(32px);
+        margin-right: rem(8px);
+      }
+
+      &__wordmark {
+        width: rem(158px);
+        height: rem(16px);
+        margin: rem(-5px) 0 0 0;
+      }
+
+      &--stacked {
+        display: block;
+
+        .o-thinkster__wordmark {
+          display: block;
+          fill: $copy-1;
+
+          &Orange {
+            fill: $active-2;
+          }
+        }
+
+        .o-thinkster__logomark {
+          display: block;
+          margin: 0 auto;
+          width: rem(64px);
+          height: rem(64px);
+        }
+
+        .o-thinkster__wordmark {
+          display: block;
+          margin: rem(13px) auto rem(7px);
+          width: rem(200px);
+          height: rem(20px);
+        }
+      }
+    }

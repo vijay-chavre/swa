@@ -1,0 +1,99 @@
+//  --------------------------------------------------
+//  Audio Note Object
+
+//  - record and play audio notes
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-audio {
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(space-between);
+      margin-top: rem(16px);
+      font-size: rem(14px);
+      line-height: rem(24px);
+
+      &__note {
+        .a-glyph {
+          width: rem(16px);
+          height: rem(13px);
+          fill: $copy-1;
+          margin-bottom: rem(-2px);
+        }
+      }
+
+      &__record {
+        @include flexbox;
+        @include align-self(flex-end);
+        margin-left: rem(156px);
+        font-size: rem(14px);
+        line-height: rem(24px);
+
+        &Icon {
+          width: rem(24px);
+          height: rem(24px);
+          border-radius: 100%;
+          border: rem(2px) solid $copy-2;
+          background: white;
+          position: relative;
+          display: inline-block;
+          margin-left: rem(4px);
+
+
+          &:after {
+            width: rem(8px);
+            height: rem(8px);
+            border-radius: rem(100px);
+            background: $alert;
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+
+        &--stop {
+          color: $alert;
+
+          .o-audio__recordIcon {
+            border-color: $alert;
+          }
+        }
+      }
+
+      &__player {
+        width: rem(200px);
+        height: rem(2px);
+        background: $ui-2;
+        position: relative;
+
+        &Control {
+          width: rem(24px);
+          height: rem(24px);
+          border-radius: 50%;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translateY(-50%);
+          background: $active-1;
+          border: rem(2px) solid white;
+          -webkit-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.24);
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.24);
+        }
+      }
+
+      &__actions {
+        border: rem(1px) solid $ui-2;
+        border-radius: rem(4px);
+        padding: rem(3px) rem(4px);
+        width: rem(24px);
+        height: rem(24px);
+
+        .a-glyph {
+          width: rem(15px);
+          height: rem(16px);
+          fill: $copy-2;
+        }
+      }
+    }

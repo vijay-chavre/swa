@@ -1,0 +1,369 @@
+//  --------------------------------------------------
+//  Tutorial Object
+
+//  - displays turtorial as overlay
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-tutorial {
+      position: absolute;
+      z-index: $z-guidance;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.5);
+
+      &__closeBtn {
+        top: rem(16px);
+        right: rem(16px);
+      }
+
+
+      &--hide {
+        transition-delay: 0.5s;
+        visibility: hidden;
+
+        &:after {
+          opacity: 0;
+        }
+      }
+
+      &--show {
+        visibility: visible;
+
+        &:after {
+          opacity: 0.5;
+        }
+      }
+    }
+
+
+
+
+    .o-tutorialNavigator {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      background: white;
+      height: rem(48px);
+
+      &__skipBtn {
+        height: 32px;
+        position: absolute;
+        right: rem(16px);
+        margin: rem(8px) 0;
+        font-size: rem(14px);
+        line-height: rem(20px);
+        color: $active-1;
+        transition: color $timing $ease;
+
+        &:hover {
+          color: $active-1b;
+        }
+      }
+    }
+
+
+
+
+    .o-helpPoints {
+      &.-p1 {
+        .o-helpPoint--1 {
+          border-color: $yellow;
+
+          &:before {
+            background: $yellow;
+          }
+          .o-helpPoint__tip {
+            opacity: 1;
+          }
+        }
+      }
+      &.-p2 {
+        .o-helpPoint--2 {
+          border-color: $yellow;
+
+          &:before {
+            background: $yellow;
+          }
+          .o-helpPoint__tip {
+            opacity: 1;
+          }
+        }
+      }
+      &.-p3 {
+        .o-helpPoint--3 {
+          border-color: $yellow;
+
+          &:before {
+            background: $yellow;
+          }
+          .o-helpPoint__tip {
+            opacity: 1;
+          }
+        }
+      }
+      &.-p4 {
+        .o-helpPoint--4 {
+          border-color: $yellow;
+
+          &:before {
+            background: $yellow;
+          }
+          .o-helpPoint__tip {
+            opacity: 1;
+          }
+        }
+      }
+      &.-p5 {
+        .o-helpPoint--5 {
+          border-color: $yellow;
+
+          &:before {
+            background: $yellow;
+          }
+          .o-helpPoint__tip {
+            opacity: 1;
+          }
+        }
+      }
+      &.-p6 {
+        .o-helpPoint--6 {
+          border-color: $yellow;
+
+          &:before {
+            background: $yellow;
+          }
+          .o-helpPoint__tip {
+            opacity: 1;
+          }
+        }
+      }
+      &.-p7 {
+        .o-helpPoint--7 {
+          border-color: $yellow;
+
+          &:before {
+            background: $yellow;
+          }
+          .o-helpPoint__tip {
+            opacity: 1;
+          }
+        }
+      }
+      &.-p8 {
+        .o-helpPoint--8 {
+          border-color: $yellow;
+
+          &:before {
+            background: $yellow;
+          }
+          .o-helpPoint__tip {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .o-helpPoint {
+      width: rem(24px);
+      height: rem(24px);
+      border-radius: 100%;
+      background: rgba(0, 0, 0, 0.2);
+      position: relative;
+      z-index: 10;
+      border: rem(2px) solid rgba(0, 0, 0, 0);
+      cursor: pointer;
+      transition: border $timing $ease;
+
+      &:before {
+        width: rem(8px);
+        height: rem(8px);
+        content: '';
+        position: absolute;
+        border-radius: rem(100px);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        transition: background $timing $ease;
+      }
+
+      &:hover {
+        border-color: white;
+      }
+
+      &__tip {
+        height: auto;
+        padding: rem(8px) rem(12px);
+        background: $yellow;
+        border-radius: rem(3px);
+        // white-space: nowrap;
+        font-size: rem(16px);
+        line-height: rem(24px);
+        position: absolute;
+        transition: opacity $timing $ease;
+        pointer-events: none;
+        opacity: 0;
+      }
+    }
+
+//  --------------------------------------------------
+//  #worksheet-tutorial style
+//  ==================================================
+    @media #{ $tablet--start } {
+      #worksheet-tutorial .o-helpPoint {
+        &--1 {
+          .o-helpPoint__tip {
+            top: rem(-64px);
+            left: 50%;
+            transform: translateX(-50%);
+            width: rem(282px);
+            white-space: nowrap;
+          }
+        }
+
+        &--2 {
+          .o-helpPoint__tip {
+            top: rem(-64px);
+            left: 50%;
+            transform: translateX(-50%);
+            width: rem(370px);
+            white-space: nowrap;
+          }
+        }
+
+        &--worksheets {
+          left: rem(64px);
+          top: rem(142px);
+          position: fixed;
+
+          .o-helpPoint__tip {
+            top: rem(-8px);
+            left: rem(48px);
+            width: rem(563px);
+          }
+        }
+
+        &--leaderboard {
+          left: rem(64px);
+          top: rem(206px);
+          position: fixed;
+
+          .o-helpPoint__tip {
+            top: rem(-8px);
+            left: rem(48px);
+            width: rem(563px);
+            width: rem(563px);
+          }
+        }
+
+        &--progress {
+          left: rem(64px);
+          top: rem(270px);
+          position: fixed;
+
+          .o-helpPoint__tip {
+            top: rem(-8px);
+            left: rem(48px);
+            width: rem(563px);
+          }
+        }
+
+        &--videoLibrary {
+          left: rem(64px);
+          top: rem(334px);
+          position: fixed;
+
+          .o-helpPoint__tip {
+            top: rem(-8px);
+            left: rem(48px);
+            width: rem(563px);
+          }
+        }
+
+        &--curriculum {
+          left: rem(64px);
+          top: rem(398px);
+          position: fixed;
+
+          .o-helpPoint__tip {
+            top: rem(-8px);
+            left: rem(48px);
+            width: rem(563px);
+          }
+        }
+
+        &--rewards {
+          left: rem(64px);
+          top: rem(462px);
+          position: fixed;
+
+          .o-helpPoint__tip {
+            top: rem(-8px);
+            left: rem(48px);
+            width: rem(563px);
+          }
+        }
+
+      }
+    }
+
+    @media #{ $tablet--only } {
+      #worksheet-tutorial .o-helpPoint {
+        &--1 {
+          left: 45%;
+          top: rem(308px);
+        }
+
+        &--2 {
+          left: 45%;
+          top: rem(576px);
+        }
+      }
+    }
+
+    @media #{ $desktop-small-1--only } {
+      #worksheet-tutorial .o-helpPoint {
+        &--1 {
+          left: 27%;
+          top: rem(308px);
+        }
+
+        &--2 {
+          left: 72%;
+          top: rem(284px);
+        }
+      }
+    }
+
+    @media #{ $desktop-small-2--start } {
+      #worksheet-tutorial .o-helpPoint {
+        &--1 {
+          left: 25%;
+          top: rem(308px);
+        }
+
+        &--2 {
+          left: 69%;
+          top: rem(284px);
+        }
+      }
+    }
+
+    @media #{ $desktop-medium-2--start } {
+      #worksheet-tutorial .o-helpPoint {
+        &--1 {
+          left: 34%;
+          top: rem(308px);
+        }
+
+        &--2 {
+          left: 65%;
+          top: rem(284px);
+        }
+      }
+    }

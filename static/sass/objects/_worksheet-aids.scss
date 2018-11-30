@@ -1,0 +1,43 @@
+//  --------------------------------------------------
+//  Worksheet Aids Object
+
+//  - aids for doing worksheets
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-worksheetAids {
+      text-align: center;
+      @include flexbox;
+
+      .b-toolTips--top:after {
+        margin-bottom: rem(16px);
+      }
+
+      .a-glyph {
+        fill: white;
+        transition: fill $timing $ease;
+
+      }
+
+      &__btn {
+        display: block;
+        padding: rem(8px);
+
+        &:hover {
+          background: $active-1;
+
+          .a-glyph {
+            fill: white;
+          }
+        }
+      }
+    }
+
+//  --------------------------------------------------
+//  small screen styles
+//  ==================================================
+    @media (max-height: 300px) {
+      .o-worksheetAids {
+        position: absolute;
+      }
+    }

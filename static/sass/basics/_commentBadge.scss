@@ -1,0 +1,19 @@
+//  --------------------------------------------------
+//  Comment Basics
+
+//  - displays comment badge
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-commentBadge {
+      @include gradient-orange-horizontal;
+      border-radius: 100%;
+      width: rem(40px);
+      height: rem(40px);
+
+      .a-glyph {
+        width: rem(24px);
+        height: rem(24px);
+        margin: rem(8px);
+      }
+    }

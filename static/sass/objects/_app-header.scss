@@ -1,0 +1,119 @@
+//  --------------------------------------------------
+//  App Header Object
+
+//  - shared header for app
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-appHeader {
+      @include flexbox;
+      @include align-items(center);
+      padding: rem(8px) rem(16px);
+      min-height: $appHeaderHeight;
+      -webkit-box-shadow: 0 1px 0 0 $ui-2;
+      box-shadow: 0 1px 0 0 $ui-2;
+      background: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: $z-chrome;
+
+      &__logo {
+        .o-thinkster__wordmark {
+          display: none;
+        }
+      }
+
+      &__breadcrumb {
+        font-size: rem(14px);
+        line-height: rem(24px);
+        margin-left: rem(4px);
+        color: $copy-3;
+
+        &Worksheet {
+          display: none;
+        }
+      }
+
+      &__actions {
+        @include flex-grow(1);
+        @include flexbox;
+        @include justify-content(flex-end);
+      }
+
+        &__actionItem {
+          margin-right: rem(8px);
+        }
+
+        &__actionLink {
+          color: $copy-1;
+          font-size: rem(14px);
+          line-height: rem(24px);
+        }
+
+
+      &__profile {
+        @include flexbox;
+        @include align-items(center);
+
+        &Name {
+          display: none;
+        }
+        &Portrait {
+          width: rem(32px);
+          height: rem(32px);
+          border: none;
+        }
+        // &Img {
+        //   width: rem(32px);
+        //   height: rem(32px);
+        // }
+      }
+    }
+
+//  --------------------------------------------------
+//  tablet styles
+//  ==================================================
+    @media #{ $tablet--start } {
+      .o-appHeader {
+        &__breadcrumb {
+
+          &Worksheet {
+            display: inline;
+          }
+        }
+      }
+    }
+
+
+//  --------------------------------------------------
+//  desktop styles
+//  ==================================================
+    @media #{ $desktop--start } {
+      .o-appHeader {
+        padding: rem(8px) rem(16px);
+
+        &__logo {
+          .o-thinkster__wordmark {
+            display: block;
+            fill: $copy-1;
+
+            &Orange {
+              fill: $active-2;
+            }
+          }
+        }
+
+        &__breadcrumb {
+          margin-left: rem(12px);
+        }
+
+        &__profileName {
+          display: block;
+          font-size: rem(14px);
+          line-height: rem(24px);
+          margin: 0 rem(12px) 0 0;
+        }
+      }
+    }

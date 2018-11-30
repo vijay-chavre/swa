@@ -1,0 +1,188 @@
+//  --------------------------------------------------
+//  Form Basics
+
+//  - generic display of form layouts
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-formHeader {
+      text-align: center;
+      padding: rem(40px) 0 rem(24px);
+      position: relative;
+
+      &:after {
+        content: '';
+        width: 100%;
+        height: rem(1px);
+        display: block;
+        position: absolute;
+        bottom: rem(-1px);
+        background: $active-2;
+      }
+    }
+
+
+
+    // form blocks
+    .b-formBlock {
+      padding: rem(32px) 0 0 0;
+
+      &__h1 {
+        margin: rem(-23px) 0 rem(16px);
+        font-weight: $font-normal;
+      }
+
+      &__set {
+        @include flexbox;
+        @include flex-wrap(wrap);
+        margin-right: rem(-10px);
+        margin-left: rem(-10px);
+      }
+
+      &__item {
+        margin: 0 0 rem(20px) 0;
+        padding: 0 rem(10px);
+        @include flex-basis(100%);
+        position: relative;
+
+        &Help {
+          width: rem(32px);
+          height: rem(32px);
+          background: $copy-2;
+          border-radius: 50%;
+          color: white;
+          transition: background 0.3s $ease;
+          position: absolute;
+          top: 50%;
+          margin: rem(-16px) 0 0 0;
+          right: rem(26px);
+
+          &:hover {
+            background: $active-1;
+          }
+        }
+      }
+
+      &__helpDisplay {
+        width: rem(280px);
+        padding: rem(12px) rem(16px);
+        background: $active-1;
+        border-radius: rem(2px);
+        color: white;
+        font-size: rem(13px);
+        line-height: rem(16px);
+        position: absolute;
+        bottom: 100%;
+        right: 0;
+        margin: 0 rem(10px) rem(16px) 0;
+        -webkit-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        display: none;
+
+        &:after {
+          top: 100%;
+        	left: 90%;
+        	border: solid transparent;
+        	content: '';
+        	height: 0;
+        	width: 0;
+        	position: absolute;
+        	pointer-events: none;
+        	border-color: rgba(160, 97, 255, 0);
+        	border-top-color: #A061FF;
+        	border-width: rem(8px);
+        	margin-left: rem(-8px);
+        }
+
+        &--on {
+          display: block;
+        }
+      }
+
+      &__error {
+        padding: rem(32px) 0 rem(8px) rem(48px);
+        position: relative;
+
+        &:before {
+          content: '!';
+          display: block;
+          font-size: rem(24px);
+          line-height: rem(32px);
+          color: white;
+          position: absolute;
+          top: rem(36px);
+          left: 0;
+          width: rem(32px);
+          height: rem(32px);
+          border-radius: 50%;
+          text-align: center;
+          background: $alert;
+        }
+      }
+
+      // form insets
+      &__inset {
+        // background: $grey-light-1;
+        // border: rem(1px) dashed $grey-med-1;
+        padding: rem(7px) rem(23px);
+
+        &Header {
+          text-align: center;
+          padding: rem(16px) 0 0 0;
+        }
+
+        &Body {
+          padding: rem(16px) 0 0 0;
+        }
+
+        &Footer {
+          text-align: center;
+          padding: rem(16px) 0 rem(24px);
+        }
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+    // form footers
+    .b-formFooter {
+      text-align: center;
+      padding: rem(40px) 0 rem(80px) 0;
+    }
+
+
+
+
+//  --------------------------------------------------
+//  tablet styles
+//  ==================================================
+    @media #{ $tablet--start } {
+      // form blocks
+      .b-formBlock {
+
+        &__item {
+
+          &--1-3 {
+            @include flex-basis(33.33%);
+            max-width: 33.33%;
+          }
+          &--2-3 {
+            @include flex-basis(66.66%);
+            max-width: 66.66%;
+          }
+
+          &--1-2 {
+            @include flex-basis(50%);
+            max-width: 50%;
+          }
+        }
+      }
+    }

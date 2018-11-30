@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="9px" viewBox="0 0 16 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>down-arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="parent-settings__new-student" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="manage-plans__student-info" transform="translate(-1000.000000, -600.000000)" fill-rule="nonzero" fill="#242424">
+            <g id="thinkster-plan" transform="translate(504.000000, 296.000000)">
+                <g id="form-field-copy-3" transform="translate(24.000000, 288.000000)">
+                    <g id="down-arrow" transform="translate(472.000000, 16.000000)">
+                        <path d="M15.7675214,0.218803419 C15.5487179,1.53349555e-15 15.1931624,1.53349555e-15 14.974359,0.218803419 L8,7.20683761 L1.01196581,0.218803419 C0.793162393,1.53349555e-15 0.437606838,1.53349555e-15 0.218803419,0.218803419 C-2.15105711e-16,0.437606838 -2.15105711e-16,0.793162393 0.218803419,1.01196581 L7.58974359,8.38290598 C7.6991453,8.49230769 7.83589744,8.54700855 7.98632479,8.54700855 C8.12307692,8.54700855 8.27350427,8.49230769 8.38290598,8.38290598 L15.7538462,1.01196581 C15.9863248,0.793162393 15.9863248,0.437606838 15.7675214,0.218803419 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

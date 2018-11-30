@@ -1,0 +1,303 @@
+//  --------------------------------------------------
+//  Worksheet Tile Object
+
+//  - represents a collection of problems
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-worksheetTile {
+      background: white;
+      margin: 0 0 rem(24px);
+      color: $copy-1;
+      transition: border $timing $ease, color $timing $ease, box-shadow $timing $ease, -webkit-box-shadow $timing $ease;
+      position: relative;
+      display: block;
+
+      &__pane {
+
+        &:before {
+          content: '';
+          position: absolute;
+          @include gradient-blue-horizontal;
+          top: 0;
+          right: 0;
+          left: 0;
+          height: rem(1px);
+          z-index: 5;
+        }
+      }
+
+      &__preview {
+        min-height: rem(160px);
+        background: 50% 0 no-repeat / cover;
+        -webkit-background-size: cover;
+        position: relative;
+        border-right: rem(1px) solid $ui-2;
+      }
+
+      &__statusBtn {
+        @include flexbox;
+        @include flex-direction(column);
+        @include justify-content(center);
+        text-align: center;
+        width: rem(144px);
+        min-height: rem(48px);
+        border-radius: 50px;
+        border: rem(2px) solid white;
+        color: white;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, 50%);
+        transition: background $timing $ease;
+        box-sizing: content-box;
+
+        .b-button__label {
+          width: 100%;
+          font-size: rem(14px);
+          line-height: rem(24px);
+        }
+
+        &--high{
+          background: $active-3;
+        }
+
+        &--medium {
+          background: $active-3b;
+        }
+
+        &--mediumLow {
+          background: $yellow;
+        }
+
+        &--low {
+          background: $alert;
+        }
+      }
+
+
+        &__scoreCount {
+          font-size: rem(11px);
+          line-height: rem(16px);
+          margin-top: rem(-3px);
+        }
+  //  --------------------------------------------------
+  //  worksheet details
+  //  ==================================================
+      &__details {
+        padding: rem(24px) rem(24px) rem(15px);
+        border-top: rem(1px) solid $ui-1;
+      }
+        &__id {
+          text-transform: uppercase;
+          text-align: left;
+          color: $copy-2;
+          width: 100%;
+        }
+        &__title {
+          text-align: left;
+          margin-top: rem(-8px);
+        }
+        &__playlist {
+          background: $copy-3;
+          color: white;
+          font-style: italic;
+          display: table;
+          padding: 0 rem(8px);
+          border-radius: rem(20px);
+        }
+        &__comment {
+          margin-top: rem(6px);
+        }
+
+
+      &__dateSubmitted {
+        font-weight: $font-bold;
+        @include gradient-green-horizontal;
+        font-size: rem(11px);
+        line-height: rem(16px);
+        padding: rem(4px) rem(8px);
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: white;
+        text-transform: uppercase;
+      }
+
+
+      &__commentBadge {
+        position: absolute;
+        right: rem(8px);
+        margin-top: rem(16px);
+      }
+
+  //  --------------------------------------------------
+  //  worksheet info bar
+  //  ==================================================
+      &__infoBar {
+        @include flexbox;
+        @include gradient-blue-horizontal;
+        @include justify-content(center);
+        @include align-items(center);
+        color: white;
+        text-align: center;
+        font-size: rem(12px);
+        line-height: rem(16px);
+        font-weight: $font-medium;
+        min-height: rem(32px);
+        padding: rem(8px) rem(8px);
+      }
+        &__infoItem {
+          padding-right: rem(24px);
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+        &__timer {
+          font-size: rem(12px);
+          line-height: rem(16px);
+          .a-glyph {
+            fill: white;
+          }
+        }
+
+      &:hover {
+        @extend %lift-shadow;
+        z-index: 10;
+        border-color: $active-1b;
+      }
+
+
+      &--new {
+
+        &:after {
+          content: 'New';
+          font-weight: $font-bold;
+          @include gradient-orange-horizontal;
+          font-size: rem(11px);
+          line-height: rem(16px);
+          padding: rem(4px) rem(8px);
+          position: absolute;
+          top: 0;
+          right: 0;
+          z-index: 10;
+          color: white;
+          text-transform: uppercase;
+        }
+
+        &:hover {
+          .o-worksheetTile__statusBtn {
+            background: $active-1b;
+          }
+        }
+      }
+
+      &--assigned {
+        .o-worksheetTile__statusBtn {
+          background: $active-1;
+        }
+      }
+
+      &--submitted {
+        .o-worksheetTile__infoBar,
+        .o-worksheetTile__pane:before {
+          @include gradient-green-horizontal;
+        }
+      }
+
+      &--locked {
+        .o-worksheetTile__preview,
+        .o-worksheetTile__details {
+          opacity: 0.3;
+        }
+        .o-worksheetTile__statusBtn {
+          display: none;
+        }
+        .o-worksheetTile__pane {
+          &:after {
+            content: '';
+            background: url('../images/lock.svg') 50% 50% no-repeat;
+            width: rem(168px);
+            min-height: rem(64px);
+            border-radius: 50px;
+            background-color: $active-2;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+
+    }
+//  --------------------------------------------------
+//  mobile portrait only : screen size is max-width-479px
+//  ==================================================
+    @media #{ $mobile-portrait--only } {
+      .o-worksheetTile {
+
+        &__preview {
+          min-height: rem(128px);
+        }
+      }
+    }
+
+//  --------------------------------------------------
+//  tablet styles
+//  ==================================================
+    @media #{ $tablet--start } {
+      .o-worksheetTile {
+
+        &__pane {
+          @include flexbox;
+          @include align-items(center);
+        }
+
+        &__preview {
+          min-height: rem(240px);
+          @include flex-basis(33.33%);
+          background: 50% 50% no-repeat / contain;
+          -webkit-background-size: contain;
+          position: relative;
+        }
+
+        &__statusBtn {
+          width: rem(80px);
+          height: rem(80px);
+          border-radius: 100%;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+//  --------------------------------------------------
+//  worksheet details
+//  ==================================================
+        &__details {
+          @include flex-basis(66.66%);
+          padding: 0 rem(24px);
+          border: none;
+        }
+
+        &__infoBar {
+          padding: rem(8px) 0;
+        }
+
+        &__commentBadge {
+          position: absolute;
+          right: rem(-16px);
+          top: rem(32px);
+          z-index: 10;
+        }
+
+        &--locked {
+          .o-worksheetTile__pane {
+            &:after {
+              width: rem(80px);
+              height: rem(80px);
+              border-radius: 100%;
+            }
+          }
+        }
+
+      }
+    }

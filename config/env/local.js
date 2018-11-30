@@ -1,0 +1,16 @@
+module.exports = {
+  apiEndPoint: 'http://localhost:3005',
+  legacyAPIEndPoint: 'https://tapi.tabtor.com',
+  tutoringSessionsAPIEndPoint: '',
+  leaderboardAPIEndPoint: 'https://node.tabtor.com',
+  leaderboardName: 'tabtor',
+  leaderboardAvatarBucket: 'tabtor-profile-avatars',
+  profilePictureBucket: 'tabtor-profile-pictures',
+  enrollURL: 'https://enroll.hellothinkster.com',
+  passwordResetURL: 'https://parents.hellothinkster.com/PasswordChange.php',
+  viaAfrikaEnrollURL: 'http://viaafrika.tabtor.com/viaafrika.php',
+  showMangeParentSettings: true,
+  showVideoLibrary: true,
+  baseServiceId: 'Starter',
+  ycmbSessionsURL: 'https://thinkstertutoring.youcanbook.me/',
+};

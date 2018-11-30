@@ -1,0 +1,26 @@
+//  --------------------------------------------------
+//  Miscellaneous Abstracts
+
+//  - catch all for homeless abstracts
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .a-glyph {
+      fill: white;
+    }
+
+    .a-glyph__stroke {
+      fill: none;
+      stroke: $copy-2;
+      stroke-width: 2;
+      stroke-linecap: 'round';
+      stroke-linejoin: 'round';
+    }
+
+    .u-hide {
+      display: none;
+    }
+
+    .u-flex {
+      @include flexbox;
+    }

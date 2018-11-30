@@ -1,0 +1,75 @@
+//  --------------------------------------------------
+//  Pill Button Selector Basics
+
+//  - for selectors using pill / toggle buttons
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-pillSelector {
+
+      &__name {
+        margin-bottom: rem(8px);
+      }
+
+      &__toggler {
+        @include flexbox;
+      }
+
+        &__toggle {
+          @include flex-grow(1);
+
+          &:hover {
+            .b-pillSelector__display {
+              border-color: rgba(255,255,255,0.6);
+            }
+            .b-pillSelector__label {
+              opacity: 1;
+            }
+          }
+
+          &:first-child {
+            .b-pillSelector__display {
+              border-radius: rem(100px) 0 0 rem(100px);
+              padding-left: rem(7px);
+            }
+          }
+          &:last-child {
+            .b-pillSelector__display {
+              border-radius: 0 rem(100px) rem(100px) 0;
+              padding-right: rem(7px);
+            }
+          }
+        }
+
+          &__input {
+            display: none;
+
+            &:checked + .b-pillSelector__display {
+              background: rgba(255,255,255,1);
+
+              .b-pillSelector__label {
+                opacity: 1;
+              }
+            }
+          }
+
+          &__display {
+            display: block;
+            padding: rem(7px) 0;
+            border: rem(1px) solid rgba(255,255,255,0.4);
+            background: rgba(255,255,255,0.2);
+            transition: 0.25s $ease;
+            margin-right: rem(-1px);
+          }
+
+          &__label {
+            text-align: center;
+            color: $copy-1;
+            @extend %copy;
+            font-size: rem(17px);
+            line-height: rem(24px);
+            display: inline-block;
+            opacity: 0.68;
+            transition: opacity 0.25s $ease, color 0.3s $ease;
+          }
+    }

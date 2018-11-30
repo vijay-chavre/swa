@@ -1,0 +1,131 @@
+//  --------------------------------------------------
+//  Thank You Page Objects
+
+//  - various objects specific to Thank You Page
+
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-thankyouHero {
+      // Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b700d3+0,00c7cf+100
+      background: #b700d3; // Old browsers
+      background: -moz-linear-gradient(-45deg,  #b700d3 0%, #00c7cf 100%); // FF3.6-15
+      background: -webkit-linear-gradient(-45deg,  #b700d3 0%,#00c7cf 100%); // Chrome10-25,Safari5.1-6
+      background: linear-gradient(135deg,  #b700d3 0%,#00c7cf 100%); // W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b700d3', endColorstr='#00c7cf',GradientType=1 ); // IE6-9 fallback on horizontal gradient
+
+      color: white;
+      text-align: center;
+      padding: rem(64px) 0 rem(408px) 0;
+      margin-bottom: rem(-376px);
+
+      .a-h\(64\) {
+        padding: 0 0 rem(24px);
+      }
+
+
+      &__downloadBtn {
+        display: inline-block;
+        margin: rem(48px) 0 0 0;
+
+        .a-glyph {
+          width: rem(243px);
+          height: rem(72px);
+          display: block;
+        }
+      }
+
+        &__appleBadge {
+          height: rem(72px);
+          display: block;
+        }
+
+      &__CTA {
+        margin: rem(24px) auto rem(16px);
+        max-width: rem(320px);
+
+        .b-flatBtn {
+          margin: 0 auto;
+          padding-left: rem(24px);
+          padding-right: rem(24px);
+        }
+      }
+
+      &--action {
+        padding-bottom: rem(48px);
+        margin: 0;
+      }
+    }
+
+    .o-storeSteps {
+      &__img {
+        background: url('../images/boy-with-laptop.jpg') no-repeat 0% 50% / cover;
+        @extend %lift-shadow;
+        width: 100%;
+        height: rem(320px);
+        display: block;
+        margin: 0 0 rem(64px);
+      }
+
+      &__list {
+        padding-bottom: rem(48px);
+        text-align: center;
+      }
+    }
+
+    .o-nextSteps {
+      margin-top: rem(64px);
+
+      &__img {
+        background: url('../images/dad-with-son.jpg') no-repeat 50% 50% / cover;
+        @extend %lift-shadow;
+        width: 100%;
+        height: rem(320px);
+        display: none;
+        margin: 0 0 rem(64px);
+      }
+    }
+
+
+//  --------------------------------------------------
+//  desktop styles (default)
+//  ==================================================
+    @media #{ $desktop--start } {
+      .o-thankyouHero {
+
+      }
+
+      .o-storeSteps {
+
+        &__img {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 50%;
+          height: auto;
+          margin: 0 rem(48px) 0 -50%;
+        }
+
+        &__list {
+          padding: rem(72px) rem(16px);
+          text-align: left;
+        }
+      }
+
+      .o-nextSteps {
+
+        &__img {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          width: 150%;
+          height: auto;
+          margin: 0 rem(48px) 0 -50%;
+        }
+
+        &__list {
+          padding: rem(72px) 0;
+        }
+      }
+    }

@@ -1,0 +1,22 @@
+//  --------------------------------------------------
+//  Copy Block Basics
+
+//  - various configurations for repeating typographic patterns
+
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    // trio of headlines used typically to start a big section or hero
+    .b-headerBlock {
+      padding: rem(32px) 0;
+
+      .a-s\(18\),
+      .a-h\(58\),
+      .a-h\(48\) {
+        margin-bottom: rem(8px);
+      }
+
+      &--hero {
+        padding-top: rem(80px);
+      }
+    }

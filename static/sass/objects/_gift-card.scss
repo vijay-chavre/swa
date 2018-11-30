@@ -1,0 +1,24 @@
+//  --------------------------------------------------
+//  Gift Card content Object
+
+//  - Gift Card display styles
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-giftCard {
+      margin-bottom: rem(24px);
+      text-align: center;
+      transition: color $timing $ease;
+
+      &__image {
+        width: 100%;
+        display: block;
+      }
+      &__title {
+        display: block;
+      }
+
+      &:hover {
+        color: $active-1;
+      }
+    }

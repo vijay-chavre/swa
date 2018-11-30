@@ -1,0 +1,156 @@
+//  --------------------------------------------------
+//  Plan Selector Object
+
+//  - UI for choosing plans and plan options
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-planSelector {
+      @include flexbox;
+      @include flex-wrap(wrap);
+
+      &__col {
+        margin-bottom: rem(24px);
+      }
+    }
+
+      .o-planOption {
+        background: white;
+        height: 100%;
+        border: rem(1px) solid $ui-2;
+        padding: rem(23px) rem(23px) rem(31px);
+
+        &__price {
+          font-weight: $font-normal;
+          font-size: rem(32px);
+          line-height: rem(40px);
+          margin: rem(16px) 0;
+          padding: rem(1px) 0 rem(7px);
+        }
+
+        &__features {
+          .a-p\(14\) {
+            margin-top: rem(-8px);
+          }
+        }
+
+        &__feature {
+          margin-top: rem(16px);
+        }
+
+        &__action {
+          @include flexbox;
+          @include justify-content(center);
+          margin-top: rem(24px);
+
+          .b-button__label {
+            font-size: rem(16px);
+            line-height: rem(24px);
+            font-weight: $font-bold;
+          }
+        }
+
+        &--silver {
+
+          .o-planOption__name {
+            color: $active-1;
+          }
+
+          .o-planOption__action {
+            .b-flatBtn {
+              background: $active-1;
+            }
+          }
+        }
+
+        &--gold {
+
+          .o-planOption__name {
+            color: $active-2;
+          }
+
+          .o-planOption__action {
+            .b-flatBtn {
+              background: $active-2;
+            }
+          }
+        }
+
+        &--platinum {
+
+          .o-planOption__name {
+            color: $active-3;
+          }
+
+          .o-planOption__action {
+            .b-flatBtn {
+              background: $active-3;
+            }
+          }
+        }
+
+        &--pause {
+
+          .o-planOption__name {
+            color: $copy-2;
+          }
+
+          .o-planOption__features {
+            padding-top: rem(8px);
+          }
+
+          .o-planOption__action {
+            .b-flatBtn {
+              background: $copy-2;
+            }
+          }
+        }
+
+        &--cancel {
+
+          .o-planOption__name {
+            color: $alert;
+          }
+
+          .o-planOption__features {
+            padding-top: rem(8px);
+          }
+
+          .o-planOption__action {
+            .b-flatBtn {
+              background: $alert;
+            }
+          }
+        }
+
+        &--current {
+
+          border-color: $active-2;
+
+          .o-planOption__action {
+
+            .b-flatBtn {
+              display: none;
+            }
+
+            &:after {
+              content: 'Current Plan';
+              color: $copy-2;
+              font-weight: $font-semibold;
+              font-size: rem(16px);
+              line-height: rem(40px);
+            }
+          }
+        }
+      }
+
+//  --------------------------------------------------
+//  tablet styles (default)
+//  ==================================================
+    @media #{ $tablet-small-1--only } {
+      .o-planOption__action {
+        .b-button__label {
+          font-size: rem(12px);
+        }
+      }
+    }

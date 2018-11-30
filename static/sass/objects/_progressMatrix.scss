@@ -1,0 +1,70 @@
+//  --------------------------------------------------
+//  Progress Matrix object
+
+//  - styles for displaying a grade selector
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-progressMatrix {
+
+      &__gradeSelector {
+        height: rem(32px);
+      }
+
+      &__keys {
+        padding: rem(16px) 0 rem(24px);
+      }
+
+        &__key {
+          @include flexbox;
+          @include align-items(center);
+          margin: 0 rem(24px) rem(8px) 0;
+          font-size: rem(14px);
+          line-height: rem(16px);
+
+          &:before {
+            content: '';
+            display: block;
+            width: rem(24px);
+            height: rem(24px);
+            background: $ui-3;
+            margin: 0 rem(8px) 0 0;
+          }
+
+          &--high {
+            &:before {
+              background: $active-3;
+            }
+          }
+          &--medium {
+            &:before {
+              background: $tint-3b;
+            }
+          }
+          &--mediumLow {
+            &:before {
+              background: $yellow;
+            }
+          }
+          &--low {
+            &:before {
+              background: $alert;
+            }
+          }
+        }
+    }
+
+
+//  --------------------------------------------------
+//  tablet styles
+//  ==================================================
+    @media #{ $tablet--start } {
+      .o-progressMatrix {
+
+        &__keys {
+          margin-left: rem(152px);
+          @include flexbox;
+          @include flex-wrap(wrap);
+        }
+      }
+    }

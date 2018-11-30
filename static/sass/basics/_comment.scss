@@ -1,0 +1,50 @@
+//  --------------------------------------------------
+//  Comment Basics
+
+//  - displays comment bubble
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+  .b-comment {
+    @include flexbox;
+    @include align-items(flex-start);
+
+    &__source {
+      min-width: rem(48px);
+
+      &--avatar\(64\) {
+        min-width: rem(72px);
+      }
+    }
+
+    &__date {
+      font-size: rem(10px);
+      line-height: rem(16px);
+      color: $copy-2;
+      text-transform: uppercase;
+      padding: rem(5px) 0 rem(3px);
+    }
+
+    &__bubble {
+      position: relative;
+      background: $active-1b;
+      border-radius: rem(8px);
+      padding: rem(8px) rem(12px);
+      color: white;
+      margin:0 0 0 rem(8px);
+      font-size: rem(12px);
+      line-height: rem(16px);
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: rem(-8px);
+        top: rem(12px);
+        width: 0;
+        height: 0;
+        border-right: rem(8px) solid $active-1b;
+        border-top: rem(4px) solid transparent;
+        border-bottom: rem(4px) solid transparent;
+      }
+    }
+  }

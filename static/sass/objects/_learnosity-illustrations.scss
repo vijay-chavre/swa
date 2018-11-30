@@ -1,0 +1,40 @@
+//  --------------------------------------------------
+//  Learnosity Illustrations Object
+
+//  - custom styles for learnosity illustrations questions
+//  ==================================================
+    .o-response {
+      @include flexbox;
+
+
+      &__illustrations {
+        @include flexbox;
+        @include flex-direction(column);
+        // @include align-items(stretch);
+        position: relative;
+
+        max-width: rem(400px);
+        padding-bottom: rem(100px);
+        margin-right: rem(20px);
+      }
+
+      &__text {
+        position: absolute;
+        font-size: rem(50px);
+        line-height:rem(64px);
+
+      }
+
+
+    }
+
+
+
+
+//  --------------------------------------------------
+//  desktop styles
+//  ==================================================
+    // @media #{ $desktop--start } {
+    //   .o-learnosity {
+    //
+    // }

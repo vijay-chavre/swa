@@ -1,0 +1,51 @@
+//  --------------------------------------------------
+//  Checkbox Form Element Basics
+
+//  - for forms using checkbox inputs
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-checkbox {
+      @include flexbox;
+      @include align-items(center);
+      margin-bottom: rem(8px);
+
+      &__display {
+        width: rem(24px);
+        height: rem(24px);
+        background: $ui-3;
+        border-radius: rem(4px);
+        border: rem(1px) solid $ui-1;
+        padding: rem(4px) rem(3px);
+        margin-right: rem(16px);
+        transition: background 0.3s $ease;
+
+        .a-glyph {
+          width: rem(16px);
+          height: rem(13px);
+          display: block;
+          fill-opacity: 0;
+        }
+      }
+
+      &__label {
+        @include flex-grow(1);
+        color: $copy-1;
+        text-align: left;
+        font-size: rem(14px);
+        line-height: rem(24px)
+      }
+
+      &__input {
+        display: none;
+
+        &:checked + .b-checkbox__display {
+          background: $active-1;
+          border-color: $active-1;
+
+          .a-glyph {
+            fill-opacity: 1;
+          }
+        }
+      }
+    }

@@ -1,0 +1,68 @@
+//  --------------------------------------------------
+//  Section Basics
+
+//  - styles for view sections
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-section {
+      margin-bottom: rem(48px);
+
+      &__intro {
+        text-align: center;
+        position: relative;
+        padding: rem(48px) 0 rem(112px);
+
+        &:after {
+          content: '';
+          width: rem(108px);
+          height: rem(120px);
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          background: url('../../images/hexagon.svg') no-repeat 0 0 / contain;
+          z-index: -1;
+        }
+      }
+
+
+      // when you need a section header
+      &Header {
+        @include flexbox;
+        @include align-items(center);
+        min-height: rem(40px);
+        margin: 0 0 rem(16px);
+
+        &__title {
+          margin: 0 rem(24px) 0 0;
+          font-weight: $font-normal;
+        }
+      }
+
+      // when you don't need a section header, go straight to title
+      &__title {
+        margin-bottom: rem(24px);
+      }
+
+      &__actions {
+        padding: rem(24px) 0;
+        margin: 0 auto;
+        text-align: center;
+
+        &--useFlex {
+          @include flexbox;
+          @include justify-content(center);
+        }
+      }
+
+        &__action {
+          min-width: rem(160px);
+        }
+    }
+
+
+    .b-playList {
+      @include flexbox;
+      @include flex-wrap(wrap);
+    }

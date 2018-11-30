@@ -1,0 +1,49 @@
+//  --------------------------------------------------
+//  Video Player Object
+
+//  - various modals
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-videoPlayer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      @include flexbox;
+      @include flex-direction(column);
+
+      &__screen {
+        @include flex-grow(1);
+      }
+
+      &__video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 72px);
+      }
+
+      &__contextPane {
+        margin: rem(16px) 0 0 0;
+        @include flexbox;
+        @include align-items(center);
+      }
+
+      &__metaData {
+        margin: 0 rem(8px);
+        text-align: center;
+        @include flex-grow(1);
+      }
+
+      &__desc {
+        margin: rem(-8px) 0 0 0;
+        color: $copy-2;
+      }
+
+      &--inModal {
+        margin: rem(24px);
+      }
+    }

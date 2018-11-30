@@ -1,0 +1,47 @@
+//  --------------------------------------------------
+//  Progress Matrix Topic Object
+
+//  - styles for displaying a container for the topics
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-matrixTopic {
+
+      &__meta {
+        padding: rem(32px) 0 rem(16px);
+        text-align: center;
+      }
+
+      &__name {
+        text-transform: uppercase;
+        font-size: rem(14px);
+        line-height: rem(16px);
+        padding: rem(3px) 0 rem(5px);
+      }
+
+      &__concepts {
+        @include flexbox;
+        @include flex-wrap(wrap);
+        @include justify-content(center);
+      }
+    }
+
+//  --------------------------------------------------
+//  tablet styles
+//  ==================================================
+    @media #{ $tablet--start } {
+      .o-matrixTopic {
+        @include flexbox;
+
+        &__meta {
+          padding: rem(24px) 0 0 0;
+          min-width: rem(152px);
+          @include flex-basis( rem(152px) );
+          text-align: left;
+        }
+
+        &__concepts {
+          @include justify-content(left);
+        }
+      }
+    }

@@ -1,0 +1,77 @@
+//  --------------------------------------------------
+//  Form Text Input Basics
+
+//  - for filling in text fields in forms
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-formTextInput {
+      display: block;
+      text-align: left;
+
+      &__label {
+        font-size: rem(14px);
+        line-height: rem(24px);
+        color: $copy-1;
+        @include flex-basis(33.33%);
+        margin-top: rem(8px);
+      }
+
+      &__input {
+        @include flex-basis(66.66%);
+        background: #F8F8F8;
+        font-size: rem(16px);
+        line-height: rem(24px);
+        border: rem(1px) solid $ui-1;
+        transition: border-color $timing $ease, color $timing $ease;
+        padding: rem(7px) rem(15px);
+        display: block;
+        width: 100%;
+
+        &:hover {
+          border-color: $active-1b;
+        }
+
+        &:focus {
+          border-color: $active-1;
+        }
+      }
+
+      &__help {
+        font-size: rem(14px);
+        line-height: rem(24px);
+        @include flex-basis(50%);
+      }
+
+      &__col {
+        @include flexbox;
+        @include align-items(center);
+        @include flex-basis(66.66%);
+
+        .b-dropDownSelector__select {
+          @include flex-basis(50%);
+
+          &:first-child {
+            margin-right: rem(16px);
+          }
+        }
+      }
+    }
+
+
+//  --------------------------------------------------
+//  tablet styles (default)
+//  ==================================================
+    @media #{ $tablet-medium-1--start } {
+      .b-formTextInput {
+        @include flexbox;
+
+        .b-dropDownSelector__select {
+          @include flex-basis(66.66%);
+        }
+      }
+
+      .b-textarea {
+        @include flex-basis(66.66%);
+      }
+    }

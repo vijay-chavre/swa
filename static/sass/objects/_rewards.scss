@@ -1,0 +1,91 @@
+//  --------------------------------------------------
+//  Rewards content Object
+
+//  - rewards content styles
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-medalValues {
+
+      &__medal {
+        padding: 0 0 rem(40px);
+      }
+
+      &__medalName {
+        font-size: rem(22px);
+        line-height: rem(32px);
+        margin: rem(14px) 0 rem(8px);
+      }
+
+      &__value {
+        font-size: rem(18px);
+        line-height: rem(24px);
+        margin: rem(-3px) 0 rem(2px);
+      }
+    }
+//  --------------------------------------------------
+//  Medals Lifetime Medals
+//  ==================================================
+    .o-lifetimeMedals {
+      @include flexbox;
+      @include justify-content(center);
+      @include align-content(center);
+      @include flex-wrap(wrap);
+      
+      &__medal {
+        margin:  0 rem(32px) rem(32px) rem(32px);
+        padding-bottom: rem(6px);
+        @include flexbox;
+
+        .a-glyph {
+          width: rem(48px);
+          height: rem(66px);
+          margin: 0 rem(16px) 0 0;
+        }
+
+        &Points {
+          font-size: rem(22px);
+          line-height: rem(32px);
+          margin: rem(18px) 0 0 0;
+          @include align-self(center);
+          //margin: rem(-40px) 0 0 rem(64px);
+        }
+      }
+
+      &__tile {
+        border: rem(1px) solid $ui-2;
+        padding: rem(23px) rem(23px);
+        min-height: rem(240px);
+        margin: 0 0 rem(24px) 0;
+        text-align: center;
+
+        &Date {
+          font-size: rem(14px);
+          line-height: rem(24px);
+        }
+
+        .a-glyph {
+          width: rem(80px);
+          height: rem(110px);
+          margin: rem(16px) auto 0 auto;
+          padding: 0 0 rem(2px);
+          display: block;
+        }
+
+        &Info {
+          font-size: rem(20px);
+          line-height: rem(24px);
+          padding: rem(5px) 0 rem(3px) 0;
+          margin: rem(16px) 0 0 0;
+          min-height: rem(112px);
+          text-align: center;
+        }
+
+        &Points {
+          font-size: rem(18px);
+          line-height: rem(24px);
+          margin: rem(8px) 0 0 0;
+          padding: rem(6px) 0 rem(2px);
+        }
+      }
+    }

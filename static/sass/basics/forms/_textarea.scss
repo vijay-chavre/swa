@@ -1,0 +1,19 @@
+//  --------------------------------------------------
+//  Textarea Basics
+
+//  - for filling in text
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-textarea {
+      @include flexbox;
+      @include justify-content(center);
+      background: $ui-3;
+      border: rem(1px) solid $ui-1;
+      font-size: rem(14px);
+      line-height: rem(24px);
+      color: $copy-1;
+      min-height: rem(168px);
+      width: 100%;
+      padding: rem(14px) rem(16px);
+    }

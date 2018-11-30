@@ -1,0 +1,33 @@
+//  --------------------------------------------------
+//  Expanded Mobile Nav Object
+
+//  - styles for expanded mobile nav
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-expandedMobileNav {
+      background: white;
+      min-height: 100vh;
+      padding: rem(72px) 0;
+      text-align: center;
+      overflow: scroll;
+
+      &__items {
+        padding: rem(40px) 0 0;
+      }
+
+      &__item {
+        @include flexbox;
+        @include align-items(center);
+        color: $copy-1;
+        height: rem(48px);
+        padding-left: rem(40px);
+
+        .a-glyph {
+          width: rem(24px);
+          height: rem(24px);
+          fill: $active-1;
+          margin-right: rem(24px);
+        }
+      }
+    }

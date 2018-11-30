@@ -1,0 +1,94 @@
+//  --------------------------------------------------
+//  Video Tile Object
+
+//  - styles for displaying video tiles
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-videoTiles {
+      margin: rem(16px) 0 0;
+    }
+
+    .o-videoTile {
+      background: white;
+      display: block;
+      color: $copy-1;
+      min-height: rem(214px);
+      position: relative;
+      border: rem(1px) solid $ui-2;
+      transition: border $timing $ease, color $timing $ease, box-shadow $timing $ease, -webkit-box-shadow $timing $ease;
+
+      &__preview {
+        min-height: rem(148px);
+        background: 50% 0 no-repeat / cover;
+        -webkit-background-size: cover;
+        position: relative;
+        border-bottom: rem(1px) solid $ui-2;
+
+        &:after {
+          position: absolute;
+          content: attr(data-duration);
+          top: rem(4px);
+          right: rem(4px);
+          background: rgba(36, 36, 36, 0.8);
+          padding: 0 rem(4px) 0;
+          border-radius: rem(2px);
+          color: white;
+          font-size: rem(10px);
+          line-height: rem(14px);
+          font-family: $copy-font;
+        }
+
+        &PlayBtn {
+          width: rem(48px);
+          height: rem(48px);
+          border: rem(2px) solid white;
+          border-radius: rem(50px);
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transition: background $timing $ease;
+          box-sizing: border-box;
+          transition: background $timing $ease, border $timing $ease, box-shadow $timing $ease, -webkit-box-shadow $timing $ease;
+          padding: rem(10px);
+        }
+      }
+
+      &__conceptTitle {
+        background: $copy-3;
+        border-radius: rem(38px);
+        position: absolute;
+        bottom: rem(12px);
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0 rem(8px);
+
+        &Label {
+          color: white;
+          font-size: rem(12px);
+          line-height: rem(16px);
+          font-style: italic;
+          white-space: nowrap;
+        }
+      }
+
+      &__title {
+        margin: rem(12px) 0 0;
+        font-size: rem(14px);
+        line-height: rem(20px);
+        font-weight: $font-bold;
+        text-align: center;
+      }
+
+      &:hover {
+        @extend %lift-shadow;
+        z-index: 10;
+        color: $copy-1;
+
+        .o-videoTile__previewPlayBtn {
+          @extend %small-shadow;
+        }
+      }
+    }

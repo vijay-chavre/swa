@@ -1,0 +1,399 @@
+//  --------------------------------------------------
+//  Learnosity Object
+
+//  - custom styles for learnosity worksheet rendering
+//  ==================================================
+    .o-learnosity {
+
+      &__imageSet {
+        @include flexbox;
+        @include flex-wrap(wrap);
+      }
+      &__imageBox {
+        margin-right: rem(40px);
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      .lrn-assess {
+        margin: 0;
+        font-family: $copy-font;
+        color: $copy-1;
+        font-size: rem(16px);
+        line-height: rem(24px);
+
+        .sr-only {
+          padding-top: 0;
+        }
+
+        .lrn,
+        .lrn_question,
+        .lrn p,
+        .lrn h1,
+        .lrn h2,
+        .lrn h3,
+        .lrn h4,
+        .lrn.lrn_widget .mq-math-mode var,
+        .lrn.lrn_widget .mq-math-mode .text,
+        .lrn.lrn_widget .mq-math-mode .nonSymbola {
+          font-family: $copy-font;
+          color: $copy-1;
+          font-size: rem(16px);
+          line-height: rem(24px);
+          font-weight: $font-normal;
+        }
+
+        .lrn_response p,
+        .lrn_response h1,
+        .lrn_response h2,
+        .lrn_response h3,
+        .lrn_response h4,
+        .lrn_stimulus_content h2 {
+          font-size: rem(20px);
+        }
+
+        .lrn_response ul p {
+            font-size: rem(16px);
+            line-height: rem(24px);
+            font-weight: $font-normal;
+          }
+
+        .lrn-items-region {
+          padding: 0;
+
+          .col-xs-12 {
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+
+        .lrn.lrn_widget .lrn_bordered_mathinput {
+          font-family: $copy-font;
+          color: $copy-1;
+          font-size: rem(20px);
+          line-height: rem(24px);
+          border: rem(1px) solid $copy-2;
+          padding: rem(7px) rem(7px);
+
+          .lrn_focused {
+            border: rem(1px) solid $active-1;
+            background-color: $tint-1;
+          }
+
+          .lrn_math_editable.mq-math-mode {
+            padding-left: 0;
+          }
+        }
+
+        .lrn_math_editable.lrn_bordered_mathinput.mq-editable-field.mq-math-mode.lrn_focused {
+          border: rem(1px) solid $active-1;
+          background-color: $tint-1;
+        }
+
+
+        .lrn_cloze .lrn_response_input .lrn_textinput textarea {
+          font-family: $copy-font;
+          color: $copy-1;
+          font-size: rem(20px);
+          line-height: rem(24px);
+          font-weight: $font-normal;
+        }
+
+        .lrn.lrn_widget.lrn_qr.lrn_clozeformula.lrn_clearfix .lrn_response_wrapper {
+          margin-top: 0;
+        }
+
+        .lrn_widget.lrn_mcq .lrn_response .lrn_mcqgroup-block {
+          .lrn_choiceLabel {
+            font-size: rem(24px);
+            line-height: rem(32px);
+            font-weight: $font-light;
+            color: $copy-1;
+          }
+
+          .lrn_contentWrapper {
+            padding: rem(11px);
+            font-family: $copy-font;
+            color: $copy-1;
+            font-size: rem(16px);
+            line-height: rem(24px);
+            font-weight: $font-normal;
+
+            h3 {
+              margin-top: 0;
+            }
+          }
+
+          label {
+            border-radius: rem(6px);
+            padding: 2px;
+            background-color: rgba(244, 244, 244, 0.5);
+            margin: rem(2px) 0 rem(2px);
+          }
+
+          li.lrn_selected label {
+            background-color: $tint-1b;
+            border-color: $active-1;
+
+            .lrn_choiceLabel {
+              color: $active-1;
+              font-weight: $font-normal;
+            }
+          }
+
+          li:hover {
+            border-radius: rem(6px);
+            background-color: $tint-1b;
+
+            .lrn_choiceLabel {
+              background-color: $tint-1b;
+            }
+          }
+
+          .lrn_choiceLabel {
+            border-radius: rem(4px);
+          }
+
+        }
+
+        .lrn_widget .lrn_response.lrn_cloze .lrn_response_input.lrn_response_font_boost p {
+          font-size: rem(20px);
+          line-height: rem(24px);
+        }
+
+        .lrn_widget.lrn_qr .lrn-clozeformula-input {
+          margin-top: rem(8px);
+          margin-bottom: rem(16px);
+        }
+
+
+
+        .lrn_widget.lrn_qr .o-response__answer {
+
+          .lrn-clozeformula-input {
+            margin: 0;
+          }
+
+          .lrn_bordered_mathinput {
+            font-size: rem(32px);
+            line-height: rem(40px);
+          }
+        }
+
+        .MathJax * {
+          font-size: rem(20px);
+          color: $copy-1;
+        }
+
+        .lrn_contentWrapper, .lrn_response_wrapper .MathJax {
+          font-size: 120%;
+        }
+
+        .lrn_width_auto.table.table-bordered {
+          font-size: rem(16px);
+        }
+
+        .lrn.lrn .mq-math-mode * {
+          font-family: $copy-font;
+        }
+
+        .lrn_widget .lrn-formula-keyboard.lrn-ui-style-block-on-focus-keyboard {
+          min-width: rem(260px);
+          max-width: rem(320px);
+        }
+
+        .lrn .row {
+          margin-left: rem(-24px);
+          margin-right: rem(-40px);
+        }
+
+        .lrn_widget.lrn_shorttext .lrn_textinput {
+          font-size: rem(20px);
+          line-height: rem(24px);
+          padding: rem(7px) rem(7px);
+          font-weight: $font-normal;
+
+          input:focus {
+            border: rem(1px) solid $active-1;
+            background-color: $tint-1;
+          }
+        }
+
+        .learnosity-item .content .lrn_widget .lrn_button {
+          border-radius: rem(6px);
+          margin: rem(8px) 0 rem(8px);
+
+          .lrn_item p {
+            margin-bottom: 0;
+
+            &:hover {
+              border: none;
+            }
+          }
+
+          &:hover {
+            background-color: $tint-1b;
+            border: none;
+          }
+
+          &:focus {
+            border: rem(1px) solid $active-1;
+            background-color: $tint-1;
+          }
+        }
+
+        .lrn_widget .lrn_btn_drag:active,
+        .lrn_widget .lrn_btn_drag.lrn_active,
+        .lrn_widget .lrn_btn_sort:active,
+        .lrn_widget .lrn_btn_sort.lrn_active {
+          background-color: $tint-1;
+          color: $copy-1;
+          border: none;
+          box-shadow: none;
+        }
+
+        .lrn_widget .lrn_btn_drag {
+          box-shadow: none;
+        }
+
+        .lrn .lrn_sort_block .lrn_sort_gripper{
+          vertical-align: baseline;
+        }
+
+        .lrn_cloze .lrn_response_input .lrn_textinput input, .lrn_cloze .lrn_response_input .lrn_textinput textarea {
+          font-size: rem(20px);
+          line-height: rem(24px);
+
+          &:focus {
+            background-color: $tint-1;
+          }
+        }
+
+        .lrn_cloze .lrn_response_input .lrn_textinput.lrn_not_attempted {
+          background: $ui-2;
+        }
+
+        .lrn_response_wrapper .lrn_response_math p strong {
+          font-weight: 400;
+        }
+
+        .lrn_question .lrn_stimulus_content.lrn_clearfix p strong {
+          font-weight: 400;
+        }
+
+        .lrn_response_innerbody .lrn_possibilityList {
+
+          &:hover {
+            background: $tint-1b;
+          }
+        }
+
+        .lrn_response_innerbody .lrn .lrn_possibilityList.lrn_over {
+          background: $tint-1b;
+        }
+
+        .lrn .lrn_possibilityList.lrn_list_bottom:hover {
+
+          &:before {
+            border-bottom: rem(12px) solid $tint-1b;
+          }
+        }
+
+        .lrn_cloze.lrn_cloze_vertical_top_none .lrn_response_input {
+          font-size: rem(20px);
+        }
+
+        .lrn_cloze.lrn_cloze_vertical_top_none .lrn_response_input .lrn b, .lrn h3 strong {
+          font-weight: normal;
+        }
+
+        .lrn_response_input .lrn_textinput {
+          & input, & textarea {
+            max-width: 100%;
+            padding: rem(7px);
+            margin: 0 rem(4px);
+          }
+        }
+
+        .lrn_widget.lrn_clozeassociation .lrn_possibilityList .lrn_draggable, .lrn_widget.lrn_imageclozeassociation .lrn_possibilityList .lrn_draggable {
+          padding: rem(9px) rem(16px);
+          font-size: rem(18px);
+        }
+
+        .lrn .table > tbody > tr > th, .lrn .table > tbody > tr > td {
+          vertical-align: baseline;
+        }
+
+        .lrn_width_auto.table.table-bordered.table-condensed .text-center {
+          font-size: rem(20px);
+        }
+
+        .lrn .table-condensed {
+          & > thead > tr > th,
+          & > thead > tr > td,
+          & > tbody > tr > th,
+          & > tbody > tr > td,
+          & > tfoot > tr > th,
+          & > tfoot > tr > td {
+            padding: rem(8px);
+          }
+        }
+
+        .lrn_widget.lrn_formulaV2 .lrn_response_input, .lrn_widget.lrn_chemistry .lrn_response_input, .lrn_widget.lrn_formulaessay .lrn_response_input, .lrn_widget.lrn_chemistryessay .lrn_response_input, .lrn_widget.lrn_formulainput .lrn_response_input  {
+          border: rem(1px) solid white;
+        }
+
+        .lrn.lrn_widget .mq-editable-field {
+          min-width: rem(35px);
+        }
+
+        .o-response img {
+          height: 100px;
+        }
+
+        .lrn_stimulus_content.lrn_clearfix {
+          .question-direction + h3 {
+            font-size: rem(24px);
+            line-height: rem(32px);
+          }
+          .question-direction{
+            font-size: 1rem !important;
+          }
+        }
+
+
+      }
+
+      .lrn_widget  {
+        .o-response__text, .o-response__answer {
+          text-align: center;
+        }
+      }
+    }
+
+//  --------------------------------------------------
+//  desktop styles
+//  ==================================================
+    // @media #{ $desktop--start } {
+    //   .o-learnosity {
+
+    //     .lrn-assess {
+
+    //       .lrn.lrn_widget.lrn_qr.lrn_clozeformula.lrn_clearfix {
+    //         // max-width: 75%;
+    //       }
+
+    //       .lrn .row {
+    //         margin-left: rem(-15px);
+    //         margin-right: rem(-15px);
+    //       }
+
+    //       .lrn_response_wrapper {
+    //         // max-width: 80%;
+    //       }
+    //     }
+    //   }
+
+    // }

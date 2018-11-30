@@ -1,0 +1,18 @@
+//  --------------------------------------------------
+//  Stars Basics
+
+//  - displays stars
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-stars {
+      @include flexbox;
+
+      .a-glyph {
+        fill: $yellow;
+        width: rem(16px);
+        height: rem(16px);
+        display: block;
+        margin: 0 rem(2px);
+      }
+    }

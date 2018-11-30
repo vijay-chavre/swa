@@ -1,0 +1,18 @@
+//  --------------------------------------------------
+//  React Countdown Clock Basics
+
+//  - styles for react countdown component
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .react-countdown-clock {
+      width: rem(56px);
+      height: rem(56px);
+      position: relative;
+      margin: rem(8px) auto 0;
+
+      canvas {
+        left: 0;
+        top: 0;
+      }
+    }

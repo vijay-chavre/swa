@@ -1,0 +1,55 @@
+//  --------------------------------------------------
+//  Challenge Tile Object
+
+//  - styles for the challenge tile such as problem of the week
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-challengeTile {
+      min-height: rem(272px);
+      @include gradient-blue-horizontal;
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+      margin: 0 0 rem(24px);
+      transition: box-shadow $timing $ease, -webkit-box-shadow $timing $ease;
+      position: relative;
+
+      &__details {
+        color: white;
+        margin: 0 rem(80px);
+      }
+
+      &__id {
+        text-transform: uppercase;
+      }
+
+      &__title {
+        margin-top: rem(-8px);
+      }
+
+      .o-worksheetTile {
+        &__playlist {
+          font-size: rem(12px);
+          line-height: rem(16px);
+          color: $copy-2;
+          background: white;
+        }
+      }
+
+      &__explainer {
+        margin: rem(3px) 0 rem(-3px);
+        font-size: rem(13px);
+        line-height: rem(16px);
+      }
+
+      &:hover {
+        @extend %lift-shadow;
+        z-index: 10;
+      }
+
+      &--submitted {
+        @include gradient-green-horizontal;
+      }
+
+    }

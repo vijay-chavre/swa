@@ -1,0 +1,95 @@
+//  --------------------------------------------------
+//  Text Input Basics
+
+//  - for filling in text fields in forms
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-textInput {
+      display: block;
+      position: relative;
+      text-align: left;
+
+      &--hasValue {
+        .b-textInput__label {
+          transform: translateY(-20px);
+        }
+      }
+
+      &--hasHelp {
+        .b-textInput__label {
+          padding-right: rem(55px);
+        }
+      }
+
+      &__label {
+        font-size: rem(12px);
+        line-height: rem(16px);
+        color: $copy-2;
+        position: absolute;
+        top: 50%;
+        left: rem(16px);
+        right: rem(16px);
+        transform: translateY(-50%);
+        transition: transform $timing $ease;
+        pointer-events: none;
+      }
+
+      &__input {
+        font-size: rem(16px);
+        line-height: rem(24px);
+        border: rem(1px) solid $ui-1;
+        transition: border-color $timing $ease, color $timing $ease;
+        padding: rem(25px) rem(15px) rem(9px) rem(15px);
+        display: block;
+        width: 100%;
+
+        &:hover {
+          border-color: $active-1;
+        }
+        &:focus {
+          border-color: $copy-2;
+          & + .b-textInput__label {
+            transform: translateY(-20px);
+          }
+        }
+      }
+
+
+      &--error {
+        .b-textInput__input {
+          border-color: $alert;
+          padding-left: rem(20px);
+          border-left: rem(4px) solid $alert;
+        }
+        .b-textInput__label {
+          color: $alert;
+        }
+      }
+
+      &--confirm {
+
+        &:after {
+          width: rem(32px);
+          height: rem(32px);
+          display: block;
+          background: $active-3 url('../glyphs/glyph-checkmark.svg') 50% 50% / 16px no-repeat;
+          content: '';
+          border-radius: 50%;
+          position: absolute;
+          top: 50%;
+          right: rem(16px);
+          margin: rem(-16px) 0 0 0;
+        }
+
+        .b-textInput__input {
+          border-color: $active-3;
+          padding-right: rem(48px);
+        }
+        .b-textInput__label {
+          color: $active-3;
+        }
+      }
+
+
+    }

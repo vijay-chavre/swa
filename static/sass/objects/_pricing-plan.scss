@@ -1,0 +1,55 @@
+//  --------------------------------------------------
+//  Check Referral Objects
+
+//  - display referrals the user made
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-pricingPlan{
+      margin: rem(16px) 0 0;
+
+      .a-h\(22\), .a-h\(28\) {
+        font-weight: 700;
+      }
+
+      &__summary {
+        position: relative;
+        z-index: 2;
+        padding: rem(14px) rem(32px) rem(18px) rem(32px);
+        margin: rem(12px) rem(32px);
+        text-align: center;
+        color: $copy-1;
+
+        &:after {
+          content: '';
+          opacity: 0.08;
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          z-index: 1;
+        }
+
+        &--active2:after {
+        // orange
+          background: $active-2;
+        }
+
+        &--active1:after {
+        // blue
+          background: $active-1;
+        }
+
+        &--active3:after {
+        // green
+          background: $active-3;
+        }
+
+        &--active4:after {
+        // purple
+          background: $active-4;
+        }
+      }
+
+    }

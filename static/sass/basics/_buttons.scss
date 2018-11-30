@@ -1,0 +1,194 @@
+//  --------------------------------------------------
+//  Button Basics
+
+//  - various button styles
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-button {
+      border-radius: rem(100px);
+      padding: rem(7px) rem(17px);
+      border: rem(1px) solid $active-1;
+      color: $active-1;
+      min-height: rem(40px);
+      text-align: center;
+      transition: border $timing $ease, color $timing $ease, background $timing $ease;
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+      box-sizing: border-box;
+
+      &__label {
+        font-size: rem(14px);
+        line-height: rem(16px);
+        font-weight: $font-bold;
+
+        &Companion {
+          font-size: rem(12px);
+          display: block;
+        }
+      }
+
+      &--fullWidth {
+        width: 100%;
+      }
+
+      &--w\(120\) {
+        width: rem(120px);
+      }
+
+      &--w\(128\) {
+        width: rem(128px);
+      }
+
+      &--large {
+        min-height: rem(48px);
+
+        .b-button__label {
+          font-size: rem(20px);
+          line-height: rem(24px);
+        }
+      }
+      &--borderless {
+        border: 0;
+        padding: rem(8px) rem(18px);
+      }
+
+      &:hover {
+        border-color: $active-1b;
+        color: $active-1b;
+      }
+
+      &:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+      }
+    }
+
+    .b-flatBtn {
+      @extend .b-button;
+      border: 0;
+      padding: rem(8px) rem(18px);
+      color: white;
+      background: $active-1;
+      transition: box-shadow $timing $ease, -webkit-box-shadow $timing $ease, background $timing $ease;
+
+      &:hover,
+      &:focus {
+        @extend %small-shadow;
+        color: white;
+      }
+
+      &--fullWidth {
+        width: 100%;
+      }
+
+      &--w\(120\) {
+        width: rem(120px);
+      }
+
+      &--w\(180\) {
+        width: rem(180px);
+      }
+
+      &--large {
+        min-height: rem(48px);
+
+        .b-button__label {
+          font-size: rem(20px);
+          line-height: rem(24px);
+        }
+      }
+
+      &--white {
+        background: white;
+      }
+
+      &--active-2 {
+        background: $active-2;
+      }
+
+      &--active-3 {
+        background: $active-3;
+      }
+
+      &--active-4 {
+        background: $active-4;
+      }
+
+      &--alert {
+        background: $alert;
+      }
+
+      &--gradient\(active-1\) {
+        @include gradient-blue-vertical;
+      }
+
+      &--gradient\(active-2\) {
+        @include gradient-orange-vertical;
+      }
+
+      &--gradient\(active-3\) {
+        @include gradient-green-vertical;
+      }
+    }
+
+    .b-iconBtn {
+      color: $active-1;
+      min-height: rem(50px);
+      min-width: rem(75px);
+      text-align: center;
+      transition: border $timing $ease, color $timing $ease, background $timing $ease;
+
+      .a-glyph {
+        width: rem(24px);
+        height: rem(24px);
+        display: block;
+        margin: 0 auto;
+      }
+
+      &--toggleOn {
+        background: #0087b7;
+        border: none;
+      }
+    }
+
+
+    .b-flexBtn {
+      // required because some browsers do not allow you to change the display property of button elements
+
+      border-radius: rem(100px);
+      padding: rem(7px) rem(17px);
+      border: rem(1px) solid $active-1;
+      min-height: rem(40px);
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+
+      &--large {
+        min-height: rem(48px);
+
+        .b-button__label {
+          font-size: rem(20px);
+          line-height: rem(24px);
+        }
+      }
+
+      &--fullWidth {
+        width: 100%;
+      }
+
+      &__label {
+        font-size: rem(14px);
+        line-height: rem(16px);
+        font-weight: $font-bold;
+
+        &Companion {
+          font-size: rem(12px);
+          display: block;
+        }
+      }
+
+    }

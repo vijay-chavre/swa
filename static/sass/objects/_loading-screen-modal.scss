@@ -1,0 +1,71 @@
+//  --------------------------------------------------
+//  Loading Screen Modal Object
+
+//  - modal style
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-loadingScreenModal {
+      position: fixed;
+      z-index: $z-modals;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transition: top 0.01s linear, bottom 0.01s linear, visibility 0.01s linear;
+      visibility: hidden;
+      pointer-events: none;
+      color: $copy-1;
+
+      &:after {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: white;
+        opacity: 0;
+        content: '';
+        transition: opacity $timing $ease;
+      }
+
+      .a-glyph {
+        width: rem(52px);
+        height: rem(54px);
+        margin: rem(-27px) 0 0 rem(-26px);
+        position: absolute;
+        z-index: 10;
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        transform: translate(-50%, -50%);
+        animation-duration: 0.8s;
+        animation-iteration-count: infinite;
+        animation-name: spin-loop;
+        animation-timing-function: linear;
+      }
+
+      &--hide {
+        transition-delay: 0.5s;
+        visibility: hidden;
+        pointer-events: none;
+
+        &:after {
+          opacity: 0;
+        }
+      }
+
+      &--show {
+        visibility: visible;
+        pointer-events: auto;
+
+        .a-glyph {
+          opacity: 1;
+        }
+
+        &:after {
+          opacity: 0.6;
+        }
+      }
+    }

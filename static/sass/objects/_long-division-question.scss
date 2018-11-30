@@ -1,0 +1,83 @@
+//  --------------------------------------------------
+//  Learnosity Object
+
+//  - custom styles for learnosity long division question rendering
+//  ==================================================
+    .o-division {
+      @include flexbox;
+      font-size: rem(28px);
+      line-height: rem(32px);
+      font-weight: $font-medium;
+      margin-left: rem(-24px);
+
+      &__divisor {
+        margin-top: rem(88px);
+      }
+    }
+
+    .o-divisionLong {
+      @include flexbox;
+      @include flex-direction(column);
+
+      &__answer {
+        @include flexbox;
+
+        &Quotient {
+          margin: 0 rem(12px);
+        }
+
+        &Remainder {
+          margin: 0 rem(12px);
+        }
+
+        &Label {
+          align-self: center;
+          margin-left: rem(16px);
+        }
+      }
+
+      &__question {
+        @include flexbox;
+        margin-left: rem(-32px);
+
+        &Symbol {
+          margin-left: rem(40px);
+
+          img {
+            width: auto;
+            // height: rem(400px);
+            height: auto;
+          }
+      }
+
+        &Dividend {
+          margin: rem(20px) 0 0 rem(-208px);
+        }
+      }
+    }
+
+    .lrn-assess .learnosity-item .o-divisionLong__questionSymbol img {
+      max-width: none;
+    }
+
+
+
+//  --------------------------------------------------
+//  desktop styles
+//  ==================================================
+    @media #{ $desktop--start } {
+      .o-division {
+        font-size: rem(40px);
+        line-height: rem(48px);
+        margin-left: 0;
+      }
+
+      .o-divisionLong {
+        &__question {
+
+          &Dividend {
+            margin-top: rem(8px);
+          }
+        }
+      }
+    }

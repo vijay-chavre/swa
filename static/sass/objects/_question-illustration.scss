@@ -1,0 +1,137 @@
+//  --------------------------------------------------
+//  Learnosity Object
+
+//  - custom styles for learnosity illustration question rendering
+//  ==================================================
+    .o-response {
+      @include flexbox;
+      @include flex-wrap(wrap);
+      @include align-items(stretch);
+      margin: rem(20px) 0 rem(40px);
+
+      &__illustrations {
+        @include flexbox;
+        @include justify-content(center);
+        @include flex-wrap(wrap);
+        max-width: rem(360px);
+        min-width: 100%;
+        position: relative;
+        padding-bottom: rem(80px);
+        margin: 0 auto;
+
+        &--subtraction {
+          margin: 0;
+          // @include justify-content(flex-start);
+
+          .o-response__text {
+            bottom: rem(-16px);
+          }
+
+          .o-response__strikethrough {
+            width: rem(136px);
+            height: rem(3px);
+            background: $copy-1;
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+          }
+        }
+      }
+
+      &__image {
+        height: rem(75px);
+        width: auto;
+      }
+
+      &__text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: rem(32px);
+        line-height: rem(40px);
+        font-weight: $font-normal;
+      }
+
+      &__answer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        line-height: rem(40px);
+      }
+    }
+
+//  --------------------------------------------------
+//  mobile landscape styles
+//  ==================================================
+    @media #{ $mobile-landscape--only } {
+      .o-response__illustrations--subtraction {
+        .o-response__strikethrough {
+          left: 35%;
+        }
+      }
+    }
+
+//  --------------------------------------------------
+//  tablet small styles
+//  ==================================================
+    @media #{ $tablet-small-1--only } {
+      .o-response__illustrations--subtraction {
+        .o-response__strikethrough {
+          left: 25%;
+        }
+      }
+    }
+
+//  --------------------------------------------------
+//  tablet small styles
+//  ==================================================
+    @media #{ $tablet-small-2--only } {
+      .o-response__illustrations--subtraction {
+        .o-response__strikethrough {
+          left: 25%;
+        }
+      }
+    }
+
+//  --------------------------------------------------
+//  tablet medium styles
+//  ==================================================
+    @media #{ $tablet-medium-1--only } {
+      .o-response__illustrations--subtraction {
+        .o-response__strikethrough {
+          left: 18%;
+        }
+      }
+    }
+
+//  --------------------------------------------------
+//  desktop styles
+//  ==================================================
+    @media #{ $desktop--start } {
+
+      .o-response {
+        @include flex-wrap(nowrap);
+
+        &__illustrations {
+          @include justify-content(space-between);
+          @include flex-wrap(wrap);
+          min-width: rem(100px);
+
+          &--subtraction {
+            .o-response__strikethrough {
+              left: 50%;
+            }
+          }
+
+          &__image {
+            height: rem(100px);
+            width: auto;
+          }
+        }
+      }
+    }

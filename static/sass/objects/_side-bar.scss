@@ -1,0 +1,243 @@
+//  --------------------------------------------------
+//  SideBar Object
+
+//  - shared sidebar object for app
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-sideBar {
+      width: 100%;
+      background: $active-1;
+      color: white;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: $z-chrome;
+      text-align: center;
+      @include gradient-blue-horizontal;
+
+      &Nav {
+
+        &__items {
+          @include flexbox;
+          @include justify-content(space-between);
+        }
+
+        &__itemWhiteboard {
+          order: -5;
+        }
+
+        &__itemVideo {
+          order: -4;
+        }
+
+        &__itemWorksheet {
+          order: -3;
+        }
+
+        &__itemProgress {
+          order: -2;
+        }
+
+        &__itemMore {
+          order: -1;
+        }
+
+        &__itemStudents, &__itemLeaderboard, &__itemSupport, &__itemCurriculum, &__itemRewards {
+          display: none;
+        }
+
+        &__link {
+          color: white;
+          padding: rem(4px) rem(4px) rem(4px);
+          display: block;
+          transition: background $timing $ease;
+          font-size: rem(11px);
+          line-height: rem(16px);
+          text-align: center;
+          box-sizing: border-box;
+
+          &--active {
+            background: rgba(255,255,255,0.24);
+          }
+
+          &--hide {
+            display: none;
+          }
+
+          &--inactive {
+            opacity: 0.25;
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+        .a-glyph {
+          display: block;
+          width: rem(24px);
+          height: rem(24px);
+          margin: 0 auto;
+        }
+        &__label {
+          display: block;
+          margin: rem(2px) 0 0;
+          text-align: center;
+        }
+      }
+
+      &--parent {
+        background: #AC83EB;
+
+        .o-sideBarNav__link:hover {
+          background: $active-4;
+          color: white;
+
+          &--active {
+            background: rgba(255,255,255,0.24);
+          }
+        }
+      }
+    }
+// --------------------------------------------------
+// mobile portrait only : screen size is max-width-479px
+// ==================================================
+
+    @media #{ $mobile-portrait--only } {
+
+      .o-sideBar {
+        @include gradient-blue-horizontal;
+
+        &Nav {
+
+          &__link {
+            font-size: rem(11px);
+            line-height: rem(16px);
+            width: rem(75px);
+            padding: rem(6px) 0 rem(2px);
+          }
+
+          &__label {
+            white-space: nowrap;
+          }
+        }
+
+        &--parent {
+          @include gradient-lavender-horizontal;
+        }
+      }
+    }
+
+//  --------------------------------------------------
+//  mobile-landscape--only only
+//  ==================================================
+
+    @media screen and (min-width : 480px) and (max-width: 500px) {
+      .o-sideBar {
+        &Nav {
+          height: rem(50px);
+
+          &__itemStudents {
+            order: -1;
+            display: block;
+          }
+
+          &__itemMore {
+            order: 0;
+          }
+        }
+      }
+    }
+
+
+//  --------------------------------------------------
+//  mobile-landscape--only only
+//  ==================================================
+
+    @media screen and (min-width : 500px) {
+      .o-sideBar {
+        &Nav {
+          height: rem(50px);
+
+          &__itemStudents, &__itemLeaderboard {
+            order: -1;
+            display: block;
+          }
+
+          &__itemMore {
+            order: 0;
+          }
+        }
+      }
+    }
+
+//  --------------------------------------------------
+//  mobile-landscape--only only
+//  ==================================================
+
+    @media screen and (min-width : 540px) {
+      .o-sideBarNav {
+
+        &__itemStudents, &__itemLeaderboard, &__itemRewards {
+          display: block;
+          order: -1;
+        }
+      }
+    }
+
+//  --------------------------------------------------
+//  tablet styles
+//  ==================================================
+    @media #{ $tablet--start } and (min-height: 528px) {
+      .o-sideBar {
+        width: $sideBarWidth;
+        min-height: calc(100vh - 56px);
+        top: $appHeaderHeight;
+        left: 0;
+
+        &Nav {
+          padding: rem(8px) 0;
+
+          &__items {
+            display: block;
+          }
+
+          li {
+            width: 100%;
+            display: block;
+          }
+
+          li.o-sideBarNav__itemMore {
+            display: none;
+          }
+
+          &__link {
+            padding: rem(8px) rem(4px) rem(4px);
+            width: 100%;
+            // min-height: rem(32px);
+
+            &:hover {
+              color: white;
+              background: $active-1b;
+            }
+          }
+
+          &__label {
+            margin: rem(4px) 0 0;
+          }
+
+          li.o-sideBarNav__mobile\(5\) {
+            display: none;
+          }
+        }
+
+        &--parent {
+          .o-sideBarNav__items {
+            li {
+              width: 100%;
+              display: block;
+            }
+          }
+        }
+      }
+    }

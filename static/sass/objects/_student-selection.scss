@@ -1,0 +1,174 @@
+//  --------------------------------------------------
+//  Student Selection Object
+
+//  - select students screen
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-studentSelection {
+
+      .a-col\(1-4\) {
+        margin-bottom: rem(24px);
+      }
+
+      &__intro {
+        padding: rem(64px) 0 rem(40px) 0;
+        text-align: center;
+      }
+
+      &__student {
+        background: white;
+        border: rem(1px) solid $ui-2;
+        padding: rem(23px);
+        text-align: center;
+        transition: border $timing $ease, color $timing $ease, box-shadow $timing $ease, -webkit-box-shadow $timing $ease;
+        position: relative;
+        height: 100%;
+
+        &Link {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 2;
+        }
+
+        &Plan {
+          padding: 0 0 rem(17px);
+        }
+
+        &Portrait {
+          width: rem(120px);
+          height: rem(120px);
+          margin: 0 auto rem(24px);
+
+          .UserAvatar--img {
+            width: 100%;
+            height: auto;
+            display: block;
+          }
+        }
+
+        &Name {
+          font-weight: normal;
+        }
+
+        &:hover {
+          @extend %lift-shadow;
+          z-index: $z-chrome;
+        }
+
+        &--plan\(none\), &--status\(canceled\) {
+          .o-studentSelection__studentPlan {
+            color: $alert;
+          }
+
+          &:hover {
+            border-color: $alert;
+            color: $alert;
+
+            .o-studentSelection__studentPortrait {
+              border-color: $alert;
+            }
+          }
+        }
+        &--plan\(silver\), &--trial\(explore\), &--status\(activate\) {
+          .o-studentSelection__studentPlan {
+            color: $active-1;
+          }
+
+          &:hover {
+            border-color: $active-1;
+            color: $active-1;
+
+            .o-studentSelection__studentPortrait {
+              border-color: $active-1;
+            }
+          }
+        }
+        &--plan\(gold\), &--trial\(pending\) {
+          .o-studentSelection__studentPlan {
+            color: $active-2;
+          }
+
+          &:hover {
+            border-color: $active-2;
+            color: $active-2;
+
+            .o-studentSelection__studentPortrait {
+              border-color: $active-2;
+            }
+          }
+        }
+        &--plan\(platinum\) {
+          .o-studentSelection__studentPlan {
+            color: $active-3;
+          }
+
+          &:hover {
+            border-color: $active-3;
+            color: $active-3;
+
+            .o-studentSelection__studentPortrait {
+              border-color: $active-3;
+            }
+          }
+        }
+        &--plan\(parent\) {
+          .o-studentSelection__studentPlan {
+            color: $active-4;
+          }
+          .o-studentSelection__studentPortrait {
+            border: none;
+            background: none;
+
+            .a-glyph {
+              width: 100%;
+              height: 100%;
+              fill: $active-4;
+            }
+          }
+
+          &:hover {
+            border-color: $active-4;
+            color: $active-4;
+          }
+        }
+
+        &--status\(on-hold\) {
+          .o-studentSelection__studentPlan {
+            color: #FFC000;
+          }
+
+          &:hover {
+            border-color: #FFC000;
+            color: #FFC000;
+
+            .o-studentSelection__studentPortrait {
+              border-color: #FFC000;
+            }
+          }
+        }
+      }
+
+      &__info {
+        padding-top: rem(40px);
+        text-align: center;
+      }
+
+      &__actions {
+        @include flexbox;
+        @include justify-content(center);
+        margin-top: rem(40px);
+
+        .b-flatBtn {
+          min-width: rem(168px);
+          margin-right: rem(16px);
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }

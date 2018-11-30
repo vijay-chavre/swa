@@ -1,0 +1,120 @@
+//  --------------------------------------------------
+//  Trial Steps Objects
+
+//  - display welcome message and next steps during trial
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-trialSteps {
+      margin: rem(40px) 0 rem(48px);
+
+      &__intro {
+        padding: rem(40px) 0 rem(48px) 0;
+        text-align: center;
+      }
+
+      &__step {
+        position: relative;
+        padding: rem(31px) rem(23px) rem(23px);
+        height: 100%;
+        background: white;
+        border: rem(1px) solid;
+        margin: 0 rem(24px) rem(40px) 0;
+
+        .b-circleBox {
+          margin: 0;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: rem(16px);
+          line-height: rem(24px);
+        }
+
+        &Status {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-weight: $font-bold;
+        }
+
+        &Label {
+          color: $copy-3;
+          text-align: center;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &--current {
+          border-width: rem(2px);
+          padding: rem(30px) rem(22px) rem(22px);
+
+          .o-trialMessages__stepLabel {
+            color: $copy-1;
+          }
+
+          .a-glyph--checkmark {
+            fill: white;
+            width: rem(16px);
+            height: rem(14px);
+            padding-top: rem(8px);
+          }
+        }
+
+        &--\(1\) {
+          border-color: #FFC000;
+
+          .b-circleBox {
+            background: #FFC000;
+          }
+        }
+
+        &--\(2\) {
+          border-color: #3DD5FE;
+
+          .b-circleBox {
+            background: #3DD5FE;
+          }
+        }
+
+        &--\(3\) {
+          border-color: #84D42D;
+
+          .b-circleBox {
+            background: #84D42D;
+          }
+        }
+      }
+
+      &__addendum {
+        .a-glyph--support {
+          background: $active-1;
+          padding: rem(8px);
+          border-radius: 50%;
+        }
+
+        .a-glyph--atomicOrbital{
+          background: $active-2;
+          padding: rem(8px);
+          border-radius: 50%;
+        }
+      }
+    }
+
+//  --------------------------------------------------
+//  desktop styles (default)
+//  ==================================================
+    @media #{ $desktop--start } {
+      .o-trialSteps {
+        &__step {
+          margin-bottom: 0;
+
+          &Label {
+            max-width: rem(312px);
+          }
+        }
+      }
+    }

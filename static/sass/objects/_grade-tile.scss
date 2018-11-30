@@ -1,0 +1,261 @@
+//  --------------------------------------------------
+//  Grade Tile Object
+
+//  - displays grade and its description
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-gradeTile {
+      @extend %tile-box;
+      margin-bottom: rem(24px);
+      pointer-events: visible;
+
+      .a-p\(13\) {
+        line-height: rem(24px);
+        padding: rem(7px) 0 rem(1px);
+      }
+
+      &__link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+      }
+
+      &__profile {
+        width: rem(64px);
+        height: rem(64px);
+        margin: 0 auto rem(8px);
+        border-radius: 100%;
+      }
+
+      &__description {
+        color: $copy-2;
+      }
+
+      &__infoBar {
+        @include flexbox;
+        @include justify-content(center);
+        @include align-items(center);
+        color: white;
+        text-align: center;
+        font-size: rem(12px);
+        line-height: rem(16px);
+        font-weight: $font-medium;
+        min-height: rem(32px);
+        padding: rem(8px) rem(8px);
+        margin: rem(16px) rem(-24px) 0;
+      }
+        &__infoItem {
+          padding-right: rem(24px);
+
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+
+      &:hover {
+        @extend %lift-shadow;
+        z-index: 10;
+      }
+
+      &--K {
+        color: #FFC000;
+
+        &:before {
+          background: #FFC000;
+        }
+
+        .o-gradeTile__profile {
+          border: none;
+          background: #FFCC00;
+        }
+
+        .o-gradeTile__infoBar {
+          background: #FFCC00;
+        }
+
+        &:hover {
+          border-color: #FFC000;
+          color: #FFC000;
+        }
+      }
+
+      &--1 {
+        color: #29E6BB;
+
+        &:before {
+          background: #29E6BB;
+        }
+
+        .o-gradeTile__profile {
+          border: none;
+          background: #29E6BB;
+        }
+
+        .o-gradeTile__infoBar {
+          background: #29E6BB;
+        }
+
+        &:hover {
+          border-color: #29E6BB;
+          color: #29E6BB;
+        }
+      }
+
+      &--2 {
+        color: #9761FF;
+
+        &:before {
+          background: #9761FF;
+        }
+
+        .o-gradeTile__profile {
+          border: none;
+          background: #9761FF;
+        }
+
+        .o-gradeTile__infoBar {
+          background: #9761FF;
+        }
+
+        &:hover {
+          border-color: #9761FF;
+          color: #9761FF;
+        }
+      }
+
+      &--3 {
+        color: #3DD5FE;
+
+        &:before {
+          background: #3DD5FE;
+        }
+
+        .o-gradeTile__profile {
+          border: none;
+          background: #3DD5FE;
+        }
+
+        .o-gradeTile__infoBar {
+          background: #3DD5FE;
+        }
+
+        &:hover {
+          border-color: #3DD5FE;
+          color: #3DD5FE;
+        }
+      }
+
+      &--4 {
+        color: #84D42D;
+
+        &:before {
+          background: #84D42D;
+        }
+
+        .o-gradeTile__profile {
+          border: none;
+          background: #84D42D;
+        }
+
+        .o-gradeTile__infoBar {
+          background: #84D42D;
+        }
+
+        &:hover {
+          border-color: #84D42D;
+          color: #84D42D;
+        }
+      }
+
+      &--5 {
+        color: #0C7CC8;
+
+        &:before {
+          background: #0C7CC8;
+        }
+
+        .o-gradeTile__profile {
+          border: none;
+          background: #0C7CC8;
+        }
+
+        .o-gradeTile__infoBar {
+          background: #0C7CC8;
+        }
+
+        &:hover {
+          border-color: #0C7CC8;
+          color: #0C7CC8;
+        }
+      }
+
+      &--6 {
+        color: #BE7617;
+
+        &:before {
+          background: #BE7617;
+        }
+
+        .o-gradeTile__profile {
+          border: none;
+          background: #BE7617;
+        }
+
+        .o-gradeTile__infoBar {
+          background: #BE7617;
+        }
+
+        &:hover {
+          border-color: #BE7617;
+          color: #BE7617;
+        }
+      }
+
+      &--7 {
+        color: #FF61BF;
+
+        &:before {
+          background: #FF61BF;
+        }
+
+        .o-gradeTile__profile {
+          border: none;
+          background: #FF61BF;
+        }
+
+        .o-gradeTile__infoBar {
+          background: #FF61BF;
+        }
+
+        &:hover {
+          border-color: #FF61BF;
+          color: #FF61BF;
+        }
+      }
+
+      &--8 {
+        color: #FD7F20;
+
+        &:before {
+          background: #FD7F20;
+        }
+
+        .o-gradeTile__profile {
+          border: none;
+          background: #FD7F20;
+        }
+
+        .o-gradeTile__infoBar {
+          background: #FD7F20;
+        }
+
+        &:hover {
+          border-color: #FD7F20;
+          color: #FD7F20;
+        }
+      }
+    }

@@ -1,0 +1,113 @@
+//  --------------------------------------------------
+//  Tool Tips Basics
+
+//  - displays tool tips
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-toolTips {
+      position: relative;
+
+      &:after {
+        position: absolute;
+        background: #FFDD00;
+        color: $copy-1;
+        font-size: rem(12px);
+        line-height: rem(16px);
+        transform: translateY(-50%);
+        transition: background $timing $ease;
+        padding: rem(4px) rem(8px);
+        white-space: nowrap;
+        content: attr(data-tooltip);
+        text-align: center;
+        border-radius: rem(3px);
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity $timing $ease;
+      }
+
+      &:hover {
+        &:after {
+          opacity: 1;
+        }
+      }
+
+      &--w\(160\):after {
+        width: rem(160px);
+        white-space: normal;
+      }
+
+      &--top {
+
+        &:after {
+          bottom: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          margin-bottom: rem(8px);
+        }
+      }
+
+      &--topLeft {
+
+        &:after {
+          bottom: 0;
+          left: rem(8px);
+          margin-bottom: rem(54px);
+        }
+      }
+
+      &--topRight {
+
+        &:after {
+          bottom: 0;
+          right: rem(8px);
+          margin-bottom: rem(54px);
+        }
+      }
+
+      &--left {
+
+        &:after {
+          top: 50%;
+          right: 100%;
+          margin-right: rem(8px);
+        }
+      }
+
+      &--right {
+
+        &:after {
+          top: 50%;
+          left: 100%;
+          margin-left: rem(8px);
+        }
+      }
+
+      &--bottom {
+        &:after {
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          margin-top: rem(32px);
+        }
+      }
+
+      &--bottomLeft {
+        &:after {
+          top: 100%;
+          // left: rem(8px);
+          left: 0;
+          margin-top: rem(44px);
+        }
+      }
+
+      &--bottomRight {
+
+        &:after {
+          top: 100%;
+          right: rem(8px);
+          margin-top: rem(44px);
+        }
+      }
+
+    }

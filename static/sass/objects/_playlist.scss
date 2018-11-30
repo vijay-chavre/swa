@@ -1,0 +1,70 @@
+//  --------------------------------------------------
+//  Playlist Objects
+
+//  - displays worksheet timeline playlist
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-playlist {
+      margin-bottom: rem(32px);
+      border-bottom: rem(1px) dashed $copy-3;
+
+      &__header {
+        @include flexbox;
+        @include justify-content(space-between);
+        @include flex-grow(1);
+        position: relative;
+        width: 100%;
+        margin-bottom: rem(24px);
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: rem(10px);
+          bottom: rem(26px);
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: rem(1px);
+          background: $copy-3;
+        }
+
+        &Title {
+          background: $ui-3;
+          padding-right: rem(8px);
+          font-size: rem(16px);
+          line-height: rem(24px);
+          z-index: 10;
+        }
+
+        &Date {
+          background: $ui-3;
+          padding-left: rem(8px);
+          font-size: rem(14px);
+          color: $copy-2;
+          z-index: 10;
+          padding-right: rem(-12px);
+        }
+      }
+    }
+
+//  --------------------------------------------------
+//  Tablet Start
+//  ==================================================
+    @media #{ $tablet--start } {
+      .o-playlist__headerTitle {
+        margin-left: 0;
+      }
+    }
+//  --------------------------------------------------
+//  Desktop Start
+//  ==================================================
+    @media #{ $desktop--start } {
+      .o-playlist__header {
+        margin: 0 rem(12px) rem(24px);
+
+        &Title {
+          margin-left: 0;
+        }
+      }
+    }

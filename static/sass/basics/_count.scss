@@ -1,0 +1,72 @@
+//  --------------------------------------------------
+//  Count Basics
+
+//  - displays a circle and star with a count
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-count {
+      padding-left: rem(12px);
+      font-size: rem(14px);
+      line-height: rem(24px);
+      position: relative;
+
+      &:before {
+        position: absolute;
+        content: '';
+        width: rem(8px);
+        height: rem(8px);
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+      }
+
+      &--correct {
+         color: $active-3;
+
+         &:before {
+           background: $active-3;
+         }
+      }
+
+      &--secondTry {
+        //color: $active-4;
+        color: $active-2;
+
+        &:before {
+          //background: $active-4;
+          background: $active-2;
+        }
+      }
+
+      &--skipped {
+        //color: $active-2;
+        color: $ui-1;
+
+        &:before {
+          //background: $active-2;
+          background: $ui-1;
+        }
+      }
+
+      &--incorrect {
+        color: $alert;
+
+        &:before {
+          background: $alert;
+        }
+      }
+
+      &--points {
+        padding-left: rem(20px);
+
+        &:before {
+          background: url('../images/star.svg');
+          background-repeat: no-repeat;
+          width: rem(16px);
+          height: rem(16px);
+          border-radius: 0;
+        }
+      }
+    }

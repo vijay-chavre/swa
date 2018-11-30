@@ -1,0 +1,213 @@
+//  --------------------------------------------------
+//  Worksheet Navigator Object
+
+//  - controls for navigating through a worksheet
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-worksheetNavigator {
+      position: absolute;
+      z-index: 1;
+      right: rem(96px);
+      left: rem(96px);
+      bottom: rem(4px);
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+
+      .b-flatBtn {
+        background: none;
+      }
+
+      &__btn {
+
+        .a-glyph {
+          fill: $active-1;
+        }
+      }
+
+      &__submit {
+        position: fixed;
+        bottom: rem(5px);
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2000;
+        min-width: rem(136px);
+        border: rem(2px) solid white;
+        text-align: center;
+        text-transform: uppercase;
+
+        .b-button__label {
+          display: block;
+          width: 100%;
+        }
+      }
+
+      &__audio {
+        position: fixed;
+        top: rem(64px);
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2000;
+        min-width: rem(240px);
+        text-transform: uppercase;
+        padding-left: rem(48px);
+
+        .b-button__label {
+          display: block;
+          width: 100%;
+          font-size: rem(14px);
+          line-height: rem(16px);
+        }
+
+        .a-glyph {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: rem(16px);
+          fill: white;
+          width: rem(24px);
+          height: rem(20px);
+        }
+      }
+
+      &__pages {
+        margin: 0 rem(4px);
+        @include flexbox;
+        @include align-items(center);
+      }
+
+      &__page {
+        font-size: rem(16px);
+        line-height: rem(24px);
+
+        &--correct {
+          .o-worksheetNavigator__pageMarker {
+            background: $active-3;
+          }
+        }
+
+        &--incorrect {
+          .o-worksheetNavigator__pageMarker {
+            background: $alert;
+          }
+        }
+
+        &--current {
+          .o-worksheetNavigator__pageMarker {
+            background: $active-1;
+          }
+        }
+
+
+        &Num {
+          padding: 0 rem(3px);
+        }
+
+        &Marker {
+          display: none;
+        }
+      }
+    }
+
+//  --------------------------------------------------
+//  tablet screen size is 640px - 719px
+//  ==================================================
+    @media #{ $tablet-small-1--only } {
+      .o-worksheetNavigator {
+        left: rem(192px);
+        right: rem(192px);
+
+        &__page {
+          font-size: rem(16px);
+          line-height: rem(24px);
+
+          &Num {
+            padding: 0 rem(3px);
+          }
+
+          &Marker {
+            display: block;
+          }
+        }
+      }
+    }
+
+
+//  --------------------------------------------------
+//  tablet styles screen size is 720px - 799px
+//  ==================================================
+
+    @media #{ $tablet-small-2--only } {
+      .o-worksheetNavigator {
+        left: rem(192px);
+        right: rem(192px);
+
+        &__page {
+          font-size: rem(16px);
+          line-height: rem(24px);
+
+          &Num {
+            padding: 0 rem(3px);
+          }
+
+          &Marker {
+            display: block;
+          }
+        }
+      }
+    }
+
+//  --------------------------------------------------
+//  tablet only : screen size is 640px - 959px
+//  ==================================================
+
+    @media #{ $tablet--only } {
+      .o-worksheetNavigator {
+        left: rem(232px);
+        right: rem(232px);
+
+        &__page {
+          padding: 0 rem(3px);
+
+          &Num {
+            padding: 0;
+          }
+
+          &Marker {
+            width: rem(8px);
+            height: rem(8px);
+            border-radius: 50%;
+            background: $ui-1;
+            display: block;
+          }
+        }
+      }
+    }
+
+//  --------------------------------------------------
+//  desktop styles screen size is 960px+
+//  ==================================================
+
+    @media #{ $desktop--start } {
+      .o-worksheetNavigator {
+        left: rem(296px);
+        right: rem(296px);
+
+        &__page {
+          padding: 0 rem(3px);
+
+          &Num {
+            padding: 0;
+          }
+
+          &Marker {
+            width: rem(8px);
+            height: rem(8px);
+            border-radius: 50%;
+            background: $ui-1;
+            display: block;
+          }
+        }
+      }
+    }

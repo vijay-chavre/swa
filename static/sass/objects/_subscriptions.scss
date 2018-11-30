@@ -1,0 +1,184 @@
+//  --------------------------------------------------
+//  Subscriptions Object
+
+//  - Various Styles for the way plans render
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-subscription {
+      background: white;
+      border: rem(1px) solid $ui-2;
+      padding: rem(15px) rem(19px);
+      margin: 0 0 rem(16px);
+      @include flexbox;
+      @include align-items(center);
+      transition: border $timing $ease;
+      position: relative;
+
+      &__studentPortrait {
+        width: rem(48px);
+        height: rem(48px);
+        min-width: rem(48px);
+        min-height: rem(48px);
+        border: rem(2px) solid $ui-2;
+        border-radius: 50%;
+        margin: 0 rem(28px) 0 0;
+        overflow: hidden;
+        transition: border $timing $ease;
+      }
+
+      &__productPortrait {
+        width: rem(48px);
+        height: rem(48px);
+        min-width: rem(48px);
+        min-height: rem(48px);
+        border-radius: 50%;
+        margin: 0 rem(28px) 0 0;
+        overflow: hidden;
+        transition: border $timing $ease;
+        position: relative;
+
+        .a-glyph {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transition: transform $timing $ease;
+        }
+      }
+
+
+      &__planInfo {
+        @include flex-basis(33%);
+        margin: 0 rem(16px) 0 0;
+
+        &--summary {
+          @include flex-basis(50%);
+        }
+      }
+
+      &__planStatus {
+        color: $copy-2;
+      }
+
+      &__billingInfo {
+        @include flex-basis(33%);
+        margin: 0 rem(16px) 0 0;
+
+        &--summary {
+          margin: 0;
+        }
+      }
+
+      &__actions {
+        @include flex-basis(33%);
+        @include flexbox;
+        @include justify-content(flex-end);
+        font-size: rem(14px);
+        line-height: rem(16px);
+        font-weight: $font-bold;
+
+        .a-glyph {
+          width: rem(14px);
+          height: rem(24px);
+          fill: $active-1;
+          transition: fill $timing $ease, color $timing $ease;
+          margin: 0 0 rem(-8px) rem(16px);
+        }
+
+        &:hover {
+          color: $active-1b;
+
+          .a-glyph {
+            fill: $active-1b;
+          }
+        }
+
+        &--summary {
+          @include justify-content(center);
+          margin-top: rem(32px);
+        }
+      }
+
+      &--plan\(silver\) {
+
+        .o-subscription__planName {
+          color: $active-1;
+        }
+      }
+
+      &--plan\(gold\) {
+
+        .o-subscription__planName {
+          color: $active-2;
+        }
+      }
+
+      &--plan\(platinum\) {
+
+        .o-subscription__planName {
+          color: $active-3;
+        }
+      }
+
+      &--plan\(no-plan\) {
+
+        .o-subscription__planName, .o-subscription__planStatus {
+          color: $alert;
+        }
+
+        .a-glyph {
+          fill: $alert;
+        }
+
+        .o-subscription__actions:hover {
+          .a-glyph {
+            fill: $alert;
+          }
+        }
+      }
+
+      &--product\(parcc\) {
+
+        .o-subscription__productPortrait {
+          background: #1691B0;
+        }
+
+        .o-subscription__planName {
+          color: #1691B0;
+        }
+      }
+
+      &--product\(sbac\) {
+
+        .o-subscription__productPortrait {
+          background: #84D42D;
+        }
+
+        .o-subscription__planName {
+          color: #84D42D;
+        }
+      }
+
+      &--product\(state\) {
+
+        .o-subscription__productPortrait {
+          background: #9761FF;
+        }
+
+        .o-subscription__planName {
+          color: #9761FF;
+        }
+      }
+
+      &--product\(competitive\) {
+
+        .o-subscription__productPortrait {
+          background: #FFC000;
+        }
+
+        .o-subscription__planName {
+          color: #FFC000;
+        }
+      }
+    }

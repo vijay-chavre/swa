@@ -1,0 +1,44 @@
+//  --------------------------------------------------
+//  User Avatar Basics
+
+//  - displays user image
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-avatar {
+
+      width: rem(120px);
+      height: rem(120px);
+      position: relative;
+      display: block;
+      overflow: hidden;
+      transition: border $timing $ease;
+      border-radius: 50%;
+      border: rem(2px) solid $ui-2;
+
+        &--size\(32\) {
+          width: rem(32px);
+          height: rem(32px);
+        }
+
+        &--size\(40\) {
+          width: rem(40px);
+          height: rem(40px);
+        }
+
+        &--size\(64\) {
+          width: rem(64px);
+          height: rem(64px);
+        }
+
+        &::after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          width: 100%;
+          height: 100%;
+          content: '';
+          background: url('/images/glyph_user-2.svg') no-repeat 50% 50% / 100% 100%;
+        }
+    }

@@ -1,0 +1,175 @@
+//  --------------------------------------------------
+//  Worksheet Object
+
+//  - various objects that exist in a worksheet
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-worksheet {
+
+      &__scribbles {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 100;
+        width: 100%;
+        height: 100%;
+      }
+
+
+      &Intro {
+
+        &__header {
+          @include gradient-blue-horizontal;
+          margin: 0 0 rem(24px);
+          text-align: center;
+          padding: rem(32px) 0 rem(24px) 0;
+          position: relative;
+
+          &--mathPattern {
+
+            &:after {
+              position: absolute;
+              content: '';
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+              background: url('../images/math-bg.png') 0 0;
+              opacity: 0.2;
+            }
+          }
+
+          .o-perfReport__summaryValue,
+          .o-perfReport__summaryLabel {
+            color: white;
+          }
+        }
+
+        &__id {
+          text-transform: uppercase;
+          font-family: $copy-font;
+          display: block;
+          font-weight: $font-bold;
+          padding: rem(5px) 0 rem(3px);
+        }
+
+        &__preview {
+          width: 100%;
+          border: rem(1px) solid $ui-1;
+          margin: 0 rem(24px) rem(16px) 0;
+          @include align-self(flex-start);
+
+          &Img {
+            width: 100%;
+            display: block;
+          }
+        }
+
+        &__details {
+          margin-bottom: rem(40px);
+        }
+
+        &__videos {
+          .b-videoPlaylist__video {
+            position: relative;
+
+            .a-glyph {
+              width: rem(40px);
+              height: rem(40px);
+              fill: $copy-3;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              -webkit-box-shadow: 0 0 8px 0 rgba(0,0,0,0.16);
+              box-shadow: 0 0 8px 0 rgba(0,0,0,0.16);
+              border-radius: 50%;
+            }
+          }
+        }
+
+        &__actions {
+          position: fixed;
+          bottom: rem(8px);
+          left: rem(8px);
+          right: rem(8px);
+
+          .b-flatBtn {
+            max-width: rem(320px);
+            width: 100%;
+            margin: 0 auto;
+            @extend %small-shadow;
+
+            &--large {
+
+              .b-button__label {
+                font-size: rem(18px);
+              }
+            }
+          }
+        }
+
+      }
+    }
+
+//  --------------------------------------------------
+//  tablet styles
+//  ==================================================
+    @media #{ $tablet--start } {
+      .o-worksheet {
+
+        &Intro {
+
+          &__preview {
+            max-width: rem(200px);
+          }
+
+          &__details {
+            @include flexbox;
+          }
+
+          &__actions {
+            bottom: rem(24px);
+          }
+
+        }
+      }
+    }
+
+
+//  --------------------------------------------------
+//  desktop styles
+//  ==================================================
+    @media #{ $desktop--start } {
+      .o-worksheet {
+
+        &Intro {
+
+          &__preview {
+            max-width: rem(400px);
+          }
+        }
+      }
+    }
+
+
+//  --------------------------------------------------
+//  review worksheet scribbles
+//  ==================================================
+    .a-appView--reviewWorksheet {
+
+      .lrn-assess {
+        min-height: inherit;
+      }
+
+      .o-worksheet__scribbles {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        z-index: 100;
+        height: 100%;
+        display: block;
+      }
+    }

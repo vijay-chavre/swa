@@ -1,0 +1,97 @@
+//  --------------------------------------------------
+//  Radio Form Element Selector Basics
+
+//  - for selectors using radio inputs
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-radioSelector {
+      display: block;
+      margin-bottom: rem(8px);
+
+
+      &__display {
+        @include flexbox;
+        @include flex-direction(column);
+        @include align-items(center);
+      }
+
+        &__button {
+          border: rem(2px) solid $ui-1;
+          border-radius: 50%;
+          background: white;
+          width: rem(16px);
+          height: rem(16px);
+          transition: border $timing $ease;
+        }
+
+
+        &__copy {
+          margin-top: rem(-6px);
+        }
+
+        &__name {
+          color: $copy-2;
+          transition: color 0.3s $ease;
+          // width: rem(100px);
+          text-align: center;
+        }
+
+
+      &__radioInput {
+        display: none;
+
+        &:checked + .b-radioSelector__display {
+
+          .b-radioSelector__button {
+            position: relative;
+            border-color: $active-1;
+
+            &:after {
+              position: absolute;
+              content: '';
+              width: rem(8px);
+              height: rem(8px);
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              background: $active-1;
+              border-radius: 50%;
+            }
+          }
+        }
+
+        &:checked + .b-radioSelector__display + .b-radioSelector__name {
+          color: $copy-1;
+        }
+      }
+
+
+      &:hover {
+        .b-radioSelector__button {
+          border-color: $active-1;
+        }
+      }
+
+      &--side {
+        @include flexbox;
+
+        .b-radioSelector__display {
+          width: auto;
+        }
+
+        .b-radioSelector__button {
+          margin-right: rem(12px);
+        }
+
+        .b-radioSelector__name {
+          width: auto;
+          padding: 0;
+          line-height: rem(16px);
+        }
+
+        &:last-child {
+          margin-left: rem(45px);
+        }
+      }
+    }

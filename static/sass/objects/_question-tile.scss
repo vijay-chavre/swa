@@ -1,0 +1,138 @@
+//  --------------------------------------------------
+//  Question Tile Object
+
+//  - styles for displaying question tiles
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .o-questionTiles {
+      .a-col {
+        margin-bottom: rem(24px);
+      }
+    }
+
+    .o-questionTile {
+      @include flexbox;
+      @include flex-direction(column);
+      height: 100%;
+      position: relative;
+      padding-left: rem(56px);
+      border: rem(1px) solid $ui-3;
+
+      &:hover {
+        @extend %lift-shadow;
+        z-index: 10;
+        transition: border $timing $ease, color $timing $ease, box-shadow $timing $ease, -webkit-box-shadow $timing $ease;
+      }
+
+      &__commentBadge {
+        position: absolute;
+        top: rem(-8px);
+        right: rem(-8px);
+      }
+
+      &__number {
+        background: $active-3;
+        width: rem(40px);
+        color: white;
+        position: absolute;
+        top: rem(-1px);
+        left: rem(-1px);
+        bottom: rem(-1px);
+        font-size: rem(16px);
+        line-height: rem(24px);
+        font-weight: $font-medium;
+        padding-top: rem(15px);
+        text-align: center;
+      }
+
+      &__answer {
+        font-size: rem(28px);
+        line-height: rem(32px);
+        font-weight: $font-light;
+        padding: rem(13px) 0 rem(1px);
+        @include flex-grow(1);
+      }
+
+      &__indicators {
+        @include flexbox;
+        @include flex-wrap(wrap);
+        padding: rem(7px) 0 rem(1px);
+        margin-bottom: rem(14px);
+
+        &Timer {
+          @include flex-basis(100%);
+        }
+
+        .b-indicator {
+          margin: rem(8px) rem(20px) 0 0;
+        }
+      }
+
+      &__indicator {
+        font-size: rem(12px);
+        line-height: rem(16px);
+        font-weight: $font-medium;
+        margin: rem(8px) rem(20px) 0 0;
+      }
+
+      &--incorrect {
+
+        &:hover {
+          border-color: $alert;
+        }
+
+        .o-questionTile__number {
+          background: $alert;
+        }
+
+        .o-questionTile__answer {
+          color: $alert;
+        }
+      }
+
+      &--secondTry {
+
+        &:hover {
+          border-color: $active-2;
+        }
+
+        .o-questionTile__number {
+          background: $active-2;
+        }
+
+        .o-questionTile__answer {
+          color: $active-2;
+        }
+      }
+
+      &--skipped {
+
+        &:hover {
+          border-color: $ui-1;
+        }
+
+        .o-questionTile__number {
+          background: $ui-1;
+        }
+
+        .o-questionTile__answer {
+          color: $copy-2;
+        }
+      }
+
+      &--correct {
+
+        &:hover {
+          border-color: $active-3;
+        }
+
+        .o-questionTile__number {
+          background: $active-3;
+        }
+
+        .o-questionTile__answer {
+          color: $active-3;
+        }
+      }
+    }

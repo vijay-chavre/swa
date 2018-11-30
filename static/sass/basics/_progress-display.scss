@@ -1,0 +1,41 @@
+//  --------------------------------------------------
+//  Progress Display Basics
+
+//  - styles for displaying progress percentages in circles
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-progressDisplay {
+      @include flexbox;
+      margin: rem(24px) 0;
+
+      &__readOut {
+        width: rem(56px);
+        height: rem(56px);
+        border-radius: 50%;
+        @include gradient-lavender-horizontal;
+        color: white;
+        text-align: center;
+        font-weight: $font-bold;
+        line-height: rem(24px);
+        padding: rem(16px) 0;
+        margin: 0 rem(16px) 0 0;
+      }
+
+      &__header {
+        padding-right: rem(22px);
+      }
+
+      &__percent {
+        font-size: rem(12px);
+      }
+
+
+      &__details {
+        display: block;
+        font-weight: normal;
+        font-family: $copy-font;
+        margin: rem(-8px) 0 0 0;
+        white-space: nowrap;
+      }
+    }

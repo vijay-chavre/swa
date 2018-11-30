@@ -1,0 +1,17 @@
+export const FLAG = 'FLAG';
+export const WHITEBOARD = 'Whiteboard';
+export const LEADERBOARD = 'Leaderboard';
+export const REWARD = 'Rewards';
+export const REWARD_GIFT = 'REWARD_GIFT';
+export const TEACHER_FEEDBACK = 'TEACHER_FEEDBACK';
+export const SUBMIT_WORKSHEET = 'SUBMIT_WORKSHEET';
+export const MASTERY_MATRIX = 'Progress';
+export const VIDEO_LIBRARY = 'Video Library';
+export const SUPPORT = 'Support';
+export const WORKSHEET = 'Dashboard';
+export const STUDENT = 'STUDENT';
+export const CURRICULUM = 'Curriculum';
+export const ACADEMIC_ADVISOR_CTA = 'Academic Advisor CTA';
+export const REQUEST_WORKSHEET = 'Request Worksheets';
+export const MORE = 'More';
+export const PLAN = 'Plan';
